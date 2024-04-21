@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{enumerate}
+\usepackage[
+nonumberlist, %do not show page numbers
+nopostdot,    %do not add additional periods
+acronym,      %generate acronym listing
+toc,          %show listings as entries in table of contents
+section]      %use section level for toc entries
+{glossaries}
+\usepackage[automake]{glossaries-extra}
+
+\title{Sentential Logic}
+\author{Axel Sorenson}
+\date{April 20th, 2024}
+
+\loadglsentries{chapter-1-glossary}
+\makeglossaries
+
+\newcommand{\printGls}[1]{%
+    \textbf{\Gls{#1}} - \glsentrydesc{#1}%
+}
+\newcommand{\printGlspl}[1]{%
+    \textbf{\Glspl{#1}} - \glsentrydesc{#1}%
+}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+Before we get into setential logic, let's establish the basics.\\
+\begin{itemize}
+	\item \printGlspl{conjecture}
+	\item \printGlspl{theorem}
+	\item \printGlspl{deductive reasoning}
+\end{itemize}
+
+\section{Deductive Reasoning and Logical Connectives}
+The correctness of deductive reasoning relies on the \textit{conclusion} of a statement being forced by the \textit{premises}. Therefore, an argument is valid if the premises cannot all be true without the conclusion being true as well.\\\\
+\noindent
+The following is what a set of premises and a conclusion typically looks like.\\
+
+\begin{itemize}
+    \item[] I will go to work either tomorrow or today.
+    \item[] I'm going to stay home today.
+    \item[$\therefore$] I will go to work tomorrow.
+\end{itemize}
+
+\noindent The $\therefore$ symbol means "therefore."\\\\
+\noindent
+This is a valid argument because in order for the two given premises to be true, the conclusion must also be true. Since I'm going to stay home today and I will go to work either tomorrow or today, that must mean I have to go to work tomorrow.\\\\
+\noindent
+Some definitions:
+\begin{itemize}
+	\item \printGls{argument}
+	\item \printGls{premise}
+	\item \printGls{conclusion}
+	\item \printGlspl{connective symbol}
+\end{itemize}
+
+Here are three connective symbols:
+\begin{center}
+\begin{tabular}{@{}cc@{}}
+	\underline{Symbol} & \underline{Meaning} \\
+	\gls{symb:or} & or \\
+	\gls{symb:and} & and \\
+	\gls{symb:not} & not 
+\end{tabular}
+\end{center}
+
+Some definitions:\\
+\begin{itemize}
+	\item \printGls{conjunction}
+	\item \printGls{disjunction}
+	\item \printGls{negation}
+	\item \printGls{well-formed formula}
+\end{itemize}
+\noindent
+Something to note: mathematical expressions such as $3 \leq \pi$ are actually disjunctions: $(3 < \pi) \lor (3 = \pi)$.\\
+$3 \leq \pi < 4$ is a conjunction: $[(3 < \pi) \lor (3 = \pi)] \land (\pi < 4)$.
+
+\subsection{Exercises}
+Q1. Analyze the logical forms of the following statements:
+\begin{enumerate}[(a)]
+	\item We’ll have either a reading assignment or homework problems, but we won’t have both homework problems and a test.
+	\item You won’t go skiing, or you will and there won’t be any snow.
+	\item $\sqrt{7} \nleq 2$.
+\end{enumerate}
+A1.
+\begin{enumerate}[(a)]
+\item
+P = we have a reading assignment.\\
+Q = we have homework problems.\\
+R = we have a test.\\
+$(P \lor Q) \land \lnot(Q \land R)$.
+\item
+P = you will go skiing\\
+Q = there will be snow\\
+$\lnot P \lor (P \land \lnot Q)$.
+\item
+P = $\sqrt{7} < 2$\\
+Q = $\sqrt{7} = 2$\\
+$\lnot(P \lor Q)$.\\
+$\lnot[(\sqrt{7} < 2) \lor (\sqrt{7} = 2)]$.
+\end{enumerate}
+
+\clearpage
+\printglossary[type=\acronymtype,style=long]  % list of acronyms
+\printglossary[type=symbolslist,style=long]   % list of symbols
+\printglossary[type=main]                     % main glossary
+\end{document}

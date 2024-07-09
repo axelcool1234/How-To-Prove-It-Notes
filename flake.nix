@@ -17,7 +17,7 @@
       '';
     in pkgs.mkShell {
       nativeBuildInputs = with pkgs; [
-        (texliveSmall.withPackages (ps: with ps; [ latexmk hypdoc gensymb glossaries glossaries-extra ]))
+        (texliveSmall.withPackages (ps: with ps; [ latexmk synctex hypdoc gensymb glossaries glossaries-extra ]))
         texlab
         zathura
         tectonic

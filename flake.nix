@@ -13,11 +13,11 @@
   {
     devShells.x86_64-linux.default = let
       cleanup = pkgs.writeShellScriptBin "cleanup" ''
-        rm *.aux *.pdf *.log *.synctex.gz *.glo *.glsdefs *.ist *.syg
+        rm *.aux *.pdf *.log *.synctex.gz *.glo *.glsdefs *.ist *.syg *.acn *.acr *.alg *.glg *.fls *.fdb_latexmk *.gls *.slg *.syi
       '';
     in pkgs.mkShell {
       nativeBuildInputs = with pkgs; [
-        texliveMinimal
+        (texliveSmall.withPackages (ps: with ps; [ latexmk hypdoc gensymb glossaries glossaries-extra ]))
         texlab
         zathura
         tectonic

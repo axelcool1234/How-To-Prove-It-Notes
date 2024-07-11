@@ -1,30 +1,9 @@
 \documentclass{article}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{gensymb}
-\usepackage{enumerate}
-\usepackage[
-nonumberlist, %do not show page numbers
-nopostdot,    %do not add additional periods
-acronym,      %generate acronym listing
-toc,          %show listings as entries in table of contents
-section]      %use section level for toc entries
-{glossaries}
-\usepackage[automake]{glossaries-extra}
+\input{preamble}
 
 \title{Sentential Logic}
 \author{Axel Sorenson}
 \date{April 20th, 2024}
-
-\loadglsentries{chapter-1-glossary}
-\makeglossaries
-
-\newcommand{\printGls}[1]{%
-    \textbf{\Gls{#1}} - \glsentrydesc{#1}%
-}
-\newcommand{\printGlspl}[1]{%
-    \textbf{\Glspl{#1}} - \glsentrydesc{#1}%
-}
 
 \begin{document}
 \maketitle
@@ -64,9 +43,11 @@ Here are three connective symbols:
 \begin{center}
 \begin{tabular}{@{}cc@{}}
 	\underline{Symbol} & \underline{Meaning} \\
-	\gls{symb:or} & or \\
+	\gls{symb:inclusive or} & inclusive or \\
+	\gls{symb:exclusive or} & exclusive or \\
 	\gls{symb:and} & and \\
-	\gls{symb:not} & not 
+	\gls{symb:not} & not \\
+    \gls{symb:implies} & implies
 \end{tabular}
 \end{center}
 
@@ -75,11 +56,12 @@ Some definitions:\\
 	\item \printGls{conjunction}
 	\item \printGls{disjunction}
 	\item \printGls{negation}
+    \item \printGls{conditional}
 	\item \printGls{well-formed formula}
 \end{itemize}
 \noindent
 Something to note: mathematical expressions such as $3 \leq \pi$ are actually disjunctions: $(3 < \pi) \lor (3 = \pi)$.\\
-$3 \leq \pi < 4$ is a conjunction: $[(3 < \pi) \lor (3 = \pi)] \land (\pi < 4)$.
+$3 \leq \pi < 4$ is a conjunction: $[(3 < \pi) \lor (3 = \pi)] \land (\pi < 4)$.\\
 
 \subsection{Exercises}
 Q1. Analyze the logical forms of the following statements:
@@ -105,6 +87,50 @@ Q = $\sqrt{7} = 2$\\
 $\lnot(P \lor Q)$.\\
 $\lnot[(\sqrt{7} < 2) \lor (\sqrt{7} = 2)]$.
 \end{enumerate}
+
+\section{Common Equivalences}
+\begin{itemize}
+	\item \printGls{De Morgan's laws}
+	\item \printGls{Commutative laws}
+	\item \printGls{Associative laws}
+	\item \printGls{Idempotent laws}
+    \item \printGls{Distributive laws}
+    \item \printGls{Absorption laws}
+    \item \printGls{Double Negation laws}
+    \item \printGls{Tautology laws}
+    \item \printGls{Contradiction laws}
+    \item \printGls{Conditional laws}
+    \item \printGls{Contrapositive law}
+\end{itemize}
+
+\section{Set Theory}
+\noindent $x$ \gls{symb:in} means that x \textit{is an element of} some set.\\
+\noindent $x$ \gls{symb:not in} means that x \textit{is not an element of} some set.\\\\
+The \gls{truth set} of a statement $P(x)$ is the set of all values of $x$ that make the statement $P(x)$ true.\\
+When a statement contains \glspl{free variable}, it is often clear from context that these variables stand for objects of a particular kind (unlike \glspl{bound variable}). The set of all objects of this kind – in other words, the set of all possible values for the variables – is called the \gls{universe of discourse} for the statement, and we say that the variables \textit{range over} this universe. For example, in most contexts the universe for the statement $x^2 < 9$ would be the set of all real numbers; the universe for the statement “x is a man” might be the set of all people.
+
+\subsection{Common Sets Used For Universes of Discourse}
+\begin{itemize}
+    \item \printGls{symb:real number set}
+    \item \printGls{symb:rational number set}
+    \item \printGls{symb:irrational number set}
+    \item \printGls{symb:integer number set}
+    \item \printGls{symb:natural number set}
+\end{itemize}
+The letters $\mathbb{R}$, $\mathbb{Q}$, and $\mathbb{Z}$ can be followed by a superscript $+$ or $-$ to indicate that only positive or negative numbers are to be included in the set.\\
+
+\noindent The empty set (also known as the null set), denoted by \gls{symb:empty set}, is the set with no elements. 
+
+\subsection{Operations on Sets}
+\begin{itemize}
+    \item \printGls{symb:intersection}
+    \item \printGls{symb:union}
+    \item \printGls{symb:difference}
+    \item \printGls{symb:symmetric difference}
+\end{itemize}
+Although set theory operations and logical connectives are related, they are not interchangeable. Logical connectives can only be used to combine \textit{statements}, whereas set theory operations must be used to combine \textit{sets}.\\
+
+\noindent Set $A$ is said to be a subsect of $B$ if every element of $A$ is also an element of $B$. This is denoted by $A \text{ \gls{symb:subset of} } B$. Sets $A$ and $B$ are said to be \gls{disjoint} if they have no elements in common.
 
 \clearpage
 \printglossary[type=\acronymtype,style=long]  % list of acronyms

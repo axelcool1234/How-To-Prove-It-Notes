@@ -1,0 +1,331 @@
+\newglossary[slg]{symbolslist}{syi}{syg}{Symbols}
+% ==== MAIN GLOSSARY ====
+\newglossaryentry{conjecture}{
+	name={conjecture},
+	description={what mathematicians call their guesses, similarly to how scientists call their guesses hypotheses.}
+}
+
+\newglossaryentry{theorem}{
+	name={theorem},
+	description={conjectures that have been proven.}
+}
+
+\newglossaryentry{deductive reasoning}{
+	name={deductive reasoning},
+	description={the foundation on which proofs are based. Proofs play a central role in mathematics.}
+}
+
+\newglossaryentry{argument}{
+	name={argument},
+	description={a set of premises and a conclusion. An argument is valid if it is the case that, if the premises are true then the conclusion must be true.}
+}
+
+\newglossaryentry{premise}{
+	name={premise},
+	description={a fact or assumption in an argument.}
+}
+
+\newglossaryentry{conclusion}{
+	name={conclusion},
+	description={the end product of an argument. In a valid argument the conclusion will be true if the given premises are true.}
+}
+
+\newglossaryentry{connective symbol}{
+	name={connective symbol},
+	description={stand-ins for some of the words used to combine statements in an argument.}	
+}
+
+\newglossaryentry{conjunction}{
+	name={conjunction},
+	description={P \gls{symb:and} Q is the conjunction of P and Q.}
+}
+
+\newglossaryentry{disjunction}{
+	name={disjunction},
+	description={P \gls{symb:inclusive or} Q is the disjunction of P and Q.}
+}
+
+\newglossaryentry{negation}{
+	name={negation},
+	description={\gls{symb:not} P is the negation of P.}
+}
+
+\newglossaryentry{conditional}{
+	name={conditional},
+    description={P \gls{symb:implies} Q is a conditional.}
+}
+
+\newglossaryentry{well-formed formula}{
+	name={well-formed formula},
+	description={a "grammatical" expression in the language of logic.}
+}
+
+\newglossaryentry{free variable}{
+    name={free variable},
+    description={The free variables in a statement stand for objects that the statement says something about. Plugging in different values for a free variable affects the meaning of a statement and may change its truth value. The fact that you can plug in different values for a free variable means that it is free to stand for anything.}
+}
+
+\newglossaryentry{bound variable}{
+    name={bound variable},
+    description={The bound variables (also known as dummy variables) in a statement are simply letters that are used as a convenience to help express an idea and should not be thought of as standing for any particular object. A bound variable can always be replaced by a new variable without changing the meaning of the statement, and often the statement can be rephrased so that the bound variables are eliminated altogether.}
+}
+
+\newglossaryentry{truth set}{
+    name={truth set},
+    description={The set of all values that make a given satement true.}
+}
+
+\newglossaryentry{universe of discourse}{
+    name={universe of discourse},
+    description={The set of all possible values that \glspl{free variable} can take in a given statement. The universe of discourse is often denoted by $U$.}
+}
+
+\newglossaryentry{rational number}{
+    name={rational number},
+    description={A number that can be expressed as the quotient of two integers, where the denominator is not zero. Rational numbers are denoted by $\mathbb{Q}$.}
+}
+
+\newglossaryentry{irrational number}{
+    name={irrational number},
+    description={A number that cannot be expressed as the quotient of two integers. Irrational numbers have non-repeating, non-terminating decimal expansions and include numbers such as $\pi$ and $\sqrt{2}$.}
+}
+
+\newglossaryentry{integer number}{
+    name={integer number},
+    description={A number that can be written without a fractional or decimal component. Integers include the set of positive whole numbers, negative whole numbers, and zero, and are denoted by $\mathbb{Z}$.}
+}
+
+\newglossaryentry{real number}{
+    name={real number},
+    description={A value that represents a quantity along a continuous line. Real numbers include all rational numbers (such as fractions and integers) and all irrational numbers (numbers that cannot be expressed as a fraction of two integers), and are denoted by $\mathbb{R}$.}
+}
+
+\newglossaryentry{natural number}{
+    name={natural number},
+    description={A positive integer (1, 2, 3, ...) used for counting and ordering. Some definitions include zero, while others do not. Natural numbers are denoted by $\mathbb{N}$.}
+}
+
+\newglossaryentry{disjoint}{
+    name={disjoint},
+    description={Sets $A$ and $B$ are said to be disjoint if $A \cap B = \varnothing$, which means that $A$ and $B$ have no common elements.},
+}
+
+\newglossaryentry{antecedent}{
+    name={antecedent},
+    description={In a conditional statement $P \rightarrow Q$, the antecedent is $P$. It is the statement that comes before the arrow and is assumed to be true for the implication to hold.}
+}
+
+\newglossaryentry{consequent}{
+    name={consequent},
+    description={In a conditional statement $P \rightarrow Q$, the consequent is $Q$. It is the statement that comes after the arrow and is asserted to be true if the \gls{antecedent} $P$ is true.}
+}
+
+% Logical Equivalences
+\newglossaryentry{De Morgan's laws}{
+    name={De Morgan's laws},
+    description={
+        $\neg(P \land Q)$ is equivalent to $\neg P \lor \neg Q$.\\
+        $\neg(P \lor Q)$ is equivalent to $\neg P \land \neg Q$.
+    }
+}
+\newglossaryentry{Commutative laws}{
+    name={Commutative laws},
+    description={
+        $P \land Q$ is equivalent to $Q \land P$.\\
+        $P \lor Q$ is equivalent to $Q \lor P$.
+    }
+}
+\newglossaryentry{Associative laws}{
+    name={Associative laws},
+    description={
+        $P \land (Q \land R)$ is equivalent to $(P \land Q) \land R$.\\
+        $P \lor (Q \lor R)$ is equivalent to $(P \lor Q) \lor R$.
+    }
+}
+\newglossaryentry{Idempotent laws}{
+    name={Idempotent laws},
+    description={
+        $P \land P$ is equivalent to $P$.\\
+        $P \lor P$ is equivalent to $P$.
+    }
+}
+\newglossaryentry{Distributive laws}{
+    name={Distributive laws},
+    description={
+        $P \land (Q \lor R)$ is equivalent to $(P \land Q) \lor (P \land R)$.\\
+        $P \lor (Q \land R)$ is equivalent to $(P \lor Q) \land (P \lor R)$.
+    }
+}
+\newglossaryentry{Absorption laws}{
+    name={Absorption laws},
+    description={
+        $P \lor (P \land Q)$ is equivalent to $P$.\\
+        $P \land (P \lor Q)$ is equivalent to $P$.
+    }
+}
+\newglossaryentry{Double Negation laws}{
+    name={Double Negation laws},
+    description={
+        $\neg \neg P$ is equivalent to $P$.
+    }
+}
+\newglossaryentry{Tautology laws}{
+    name={Tautology laws},
+    description={Formulas that are always true are called tautologies.\\
+        $P \land \text{(a tautology)}$ is equivalent to $P$.\\
+        $P \lor \text{(a tautology)}$ is a tautology.\\
+        $\neg \text{(a tautology)}$ is a contradiction. 
+    }
+}
+\newglossaryentry{Contradiction laws}{
+    name={Contradiction laws},
+    description={Formulas that are always false are called contradictions.\\
+        $P \land \text{(a contradiction)}$ is a contradiction.\\
+        $P \lor \text{(a contradiction)}$ is equivalent to $P$.\\
+        $\neg \text{(a contradiction)}$ is a tautology.
+    }
+}
+
+\newglossaryentry{Conditional laws}{
+    name={Conditional laws},
+    description={
+        $P \text{ \gls{symb:implies} } Q$ is equivalent to $\neg P \lor Q$.\\
+        $P \text{ \gls{symb:implies} } Q$ is equivalent to $\neg (P \land \neg Q)$.
+    }
+}
+
+\newglossaryentry{Contrapositive law}{
+    name={Contrapositive law},
+    description={
+        $P \text{ \gls{symb:implies} } Q$ is equivalent to $\neg Q \rightarrow \neg P$. 
+    }
+}
+
+
+% ==== SYMB GLOSSARY ====
+\newglossaryentry{symb:therefore}{
+	name=$\therefore$,
+	description={therefore, which is used for an argument's conclusion.},
+	type=symbolslist
+}
+\newglossaryentry{symb:not}{
+	name=$\lnot$,
+	description={a logical negation. Note that this symbol always applies only to the statement that comes immediately after it.},
+	type=symbolslist
+}
+\newglossaryentry{symb:and}{
+	name=$\land$,
+	description={a logical AND.},
+	type=symbolslist
+}
+\newglossaryentry{symb:inclusive or}{
+	name=$\lor$,
+	description={a logical OR. Note that this is the inclusive or.},
+	type=symbolslist
+}
+\newglossaryentry{symb:exclusive or}{
+	name=$\oplus$,
+	description={a logical OR. Note that this is the exclusive or.},
+	type=symbolslist
+}
+\newglossaryentry{symb:in}{
+    name=$\in$,
+    description={is an element of.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:not in}{
+    name=$\notin$,
+    description={is not an element of.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:where}{
+    name=$\mid$,
+    description={abbreviation used in set construction to define the statements that must be true for a given variable to belong to the set in question.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:real number set}{
+    name=$\mathbb{R}$,
+    description={The set of all \glspl{real number}.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:rational number set}{
+    name=$\mathbb{Q}$,
+    description={The set of all \glspl{rational number}.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:irrational number set}{
+    name=$\mathbb{I}$,
+    description={The set of all \glspl{irrational number}.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:integer number set}{
+    name=$\mathbb{Z}$,
+    description={The set of all \glspl{integer number}.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:natural number set}{
+    name=$\mathbb{N}$,
+    description={The set of all \glspl{natural number}. Note that some mathematicians consider $0$ as a natural number and some don't.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:empty set}{
+    name=$\varnothing$,
+    description={The empty set, which contains no elements.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:intersection}{
+    name=$\cap$,
+    description={Set intersection. $A \cap B = \{x \text{ \gls{symb:where} } x \in A \text{ and } x \in B\}$.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:union}{
+    name=$\cup$,
+    description={Set union. $A \cup B = \{x \text{ \gls{symb:where} } x \in A \text{ or } x \in B\}$.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:difference}{
+    name=$\setminus$,
+    description={Set difference. $A \setminus B = \{x \text{ \gls{symb:where} } x \in A \text{ and } x \notin B\}$.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:symmetric difference}{
+    name=$\triangle$,
+    description={Set symmetric difference. $A \triangle B = (A \setminus B) \cup (B \setminus A) = \{x \mid (x \in A \text{ and } x \notin B) \text{ or } (x \in B \text{ and } x \notin A)\}$.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:subset of}{
+    name=$\subseteq$,
+    description={A is a subset of B, $A \subseteq B$, if every element of A is also an element of B.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:implies}{
+    name=$\rightarrow$,
+    description={$P \rightarrow Q$ means "if $P$, then $Q$". It is read as "P implies Q". $P$ is the \gls{antecedent} and $Q$ is the \gls{consequent}.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:for all}{
+    name=$\forall$,
+    description={For all, universal quantifier. $\forall x \in A$, read as "for all $x$ in $A$". Used to refer to \textit{every} value of $x$. Note that this quantifier binds $x$. Note that this symbol always applies only to the statement that comes immediately after it.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:there exists}{
+    name=$\exists$,
+    description={There exists, existential quantifier. $\exists x \in A$, read as "there exists an $x$ in $A$". Used to refer to \textit{at least one} value of $x$. Note that this quantifier binds $x$. Note that this symbol always applies only to the statement that comes immediately after it.},
+    type=symbolslist
+}

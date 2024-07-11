@@ -1,0 +1,22 @@
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{enumerate}
+\usepackage[
+nonumberlist, %do not show page numbers
+nopostdot,    %do not add additional periods
+acronym,      %generate acronym listing
+toc,          %show listings as entries in table of contents
+section]      %use section level for toc entries
+{glossaries}
+\usepackage[automake]{glossaries-extra}
+
+\loadglsentries{glossary}
+\makeglossaries
+
+\newcommand{\printGls}[1]{%
+    \textbf{\Gls{#1}} - \glsentrydesc{#1}%
+}
+\newcommand{\printGlspl}[1]{%
+    \textbf{\Glspl{#1}} - \glsentrydesc{#1}%
+}

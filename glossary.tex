@@ -201,6 +201,28 @@
     }
 }
 
+\newglossaryentry{Quantifier Negation laws}{
+    name={Quantifier Negation laws},
+    description={
+        $\neg \exists x P(x)$ is equivalent to $\forall x \neg P(x)$.\\
+        $\neg \forall x P(x)$ is equivalent to $\exists x \neg P(x)$.\\
+    }
+}
+
+\newglossaryentry{vacuously true}{
+    name={vacuously true},
+    description={A statement is said to be vacuously true if it asserts that all elements of the empty set have a certain property. For example, the statement "all unicorns have wings" is vacuously true because there are no unicorns. In general, a statement of the form $\forall x \in A, P(x)$ is vacuously true if $A$ is empty. Another way of looking at it is converting the universal statement that is vacuously true into a conditional statement of the form $\forall x (x \in A \rightarrow P(x))$ and realizing that the antecedent cannot be satisfied (which in our example would be the statement $x \in A$. This is because there is no $x$ at all in our set of unicorns - it is the empty set).}
+}
+
+\newglossaryentry{family of sets}{
+    name={family of sets},
+    description={A family of sets is a set whose elements are themselves sets. It is often indexed by another set, allowing each set in the family to be identified by a unique index. For example, $\{A_i \mid i \in I\}$ denotes a family of sets $\{A_i\}$ indexed by $I$.}
+}
+
+\newglossaryentry{power set}{
+    name={power set},
+    description={The power set of a set $A$, denoted by $\text{\gls{symb:power set}}(A)$ or $2^A$, is the set of all subsets of $A$, including the empty set and $A$ itself. Formally, $\mathcal{P}(A) = \{B \mid B \subseteq A\}$.}
+}
 
 % ==== SYMB GLOSSARY ====
 \newglossaryentry{symb:therefore}{
@@ -329,3 +351,34 @@
     description={There exists, existential quantifier. $\exists x \in A$, read as "there exists an $x$ in $A$". Used to refer to \textit{at least one} value of $x$. Note that this quantifier binds $x$. Note that this symbol always applies only to the statement that comes immediately after it.},
     type=symbolslist
 }
+
+\newglossaryentry{symb:there exists!}{
+    name=$\exists!$,
+    description={There exists exactly one. $\exists! x \in A$, read as "there exists exactly one $x$ in $A$". Used to refer to \textit{one and only one} value of $x$. Note that this quantifier binds $x$. Note that this symbol always applies only to the statement that comes immediately after it.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:iff}{
+    name=$\leftrightarrow$,
+    description={$P \leftrightarrow Q$ means "P if and only if Q". It indicates that $P$ is true exactly when $Q$ is true, and vice versa.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:power set}{
+    name=$\mathcal{P}$,
+    description={The power set},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:intersection of a family of sets}{
+    name=$\bigcap$,
+    description={Intersection of a family of sets. $\bigcap_{i \in I} A_i$ represents the intersection of the sets $A_i$ for all $i \in I$, i.e., $\bigcap_{i \in I} A_i = \{x \mid \forall i \in I, x \in A_i\}$.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:union of a family of sets}{
+    name=$\bigcup$,
+    description={Union of a family of sets. $\bigcup_{i \in I} A_i$ represents the union of the sets $A_i$ for all $i \in I$, i.e., $\bigcup_{i \in I} A_i = \{x \mid \exists i \in I, x \in A_i\}$.},
+    type=symbolslist
+}
+

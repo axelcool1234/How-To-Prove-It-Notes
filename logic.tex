@@ -47,7 +47,8 @@ Here are three connective symbols:
 	\gls{symb:exclusive or} & exclusive or \\
 	\gls{symb:and} & and \\
 	\gls{symb:not} & not \\
-    \gls{symb:implies} & implies
+    \gls{symb:implies} & implies \\
+    \gls{symb:iff} & if and only if
 \end{tabular}
 \end{center}
 
@@ -101,6 +102,7 @@ $\lnot[(\sqrt{7} < 2) \lor (\sqrt{7} = 2)]$.
     \item \printGls{Contradiction laws}
     \item \printGls{Conditional laws}
     \item \printGls{Contrapositive law}
+    \item \printGls{Quantifier Negation laws}
 \end{itemize}
 
 \section{Set Theory}
@@ -133,15 +135,22 @@ Although set theory operations and logical connectives are related, they are not
 \noindent Set $A$ is said to be a subsect of $B$ if every element of $A$ is also an element of $B$. This is denoted by $A \text{ \gls{symb:subset of} } B$. Sets $A$ and $B$ are said to be \gls{disjoint} if they have no elements in common.
 
 \section{Quantifiers}
-Here are two quantifiers:
+Here are two quantifiers (plus an abbreviation):
 \begin{center}
 \begin{tabular}{@{}cc@{}}
 	\underline{Symbol} & \underline{Meaning} \\
 	\gls{symb:for all} & for all \\
-	\gls{symb:there exists} & there exists\\
+	\gls{symb:there exists} & there exists at least one\\
+    \gls{symb:there exists!} & there exists one and only one\\
 \end{tabular}
 \end{center}
-Quantifiers bind variables that they are applied to. An easier way to think about multiple quantifiers in a statement is to mentally bind each variable (that has a quantifier applied to it) a value one at a time (left to right).
+Quantifiers bind variables that they are applied to. An easier way to think about multiple quantifiers in a statement is to mentally bind each variable (that has a quantifier applied to it) a value one at a time (left to right).\\
+
+\noindent A universal statement is \gls{vacuously true} if its \gls{antecedent} cannot be satisfied.\\
+
+\noindent A set can contain other sets. A set containing only other sets is often called a \gls{family of sets}. An important example of a family of sets is given by the \gls{power set} of a set.\\
+
+\noindent The set of all common elements in a family of sets is denoted \gls{symb:intersection of a family of sets}$F$. The set resulting from throwing all the elements of all the sets in a family of sets is denoted \gls{symb:union of a family of sets}$F$.
 
 \clearpage
 \printglossary[type=\acronymtype,style=long]  % list of acronyms

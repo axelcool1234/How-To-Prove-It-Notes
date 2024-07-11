@@ -1,7 +1,7 @@
 \documentclass{article}
 \input{preamble}
 
-\title{Sentential Logic}
+\title{Sentential and Quantificational Logic}
 \author{Axel Sorenson}
 \date{April 20th, 2024}
 
@@ -131,6 +131,17 @@ The letters $\mathbb{R}$, $\mathbb{Q}$, and $\mathbb{Z}$ can be followed by a su
 Although set theory operations and logical connectives are related, they are not interchangeable. Logical connectives can only be used to combine \textit{statements}, whereas set theory operations must be used to combine \textit{sets}.\\
 
 \noindent Set $A$ is said to be a subsect of $B$ if every element of $A$ is also an element of $B$. This is denoted by $A \text{ \gls{symb:subset of} } B$. Sets $A$ and $B$ are said to be \gls{disjoint} if they have no elements in common.
+
+\section{Quantifiers}
+Here are two quantifiers:
+\begin{center}
+\begin{tabular}{@{}cc@{}}
+	\underline{Symbol} & \underline{Meaning} \\
+	\gls{symb:for all} & for all \\
+	\gls{symb:there exists} & there exists\\
+\end{tabular}
+\end{center}
+Quantifiers bind variables that they are applied to. An easier way to think about multiple quantifiers in a statement is to mentally bind each variable (that has a quantifier applied to it) a value one at a time (left to right).
 
 \clearpage
 \printglossary[type=\acronymtype,style=long]  % list of acronyms

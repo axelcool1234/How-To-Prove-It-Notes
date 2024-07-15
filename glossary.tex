@@ -7,7 +7,23 @@
 
 \newglossaryentry{theorem}{
 	name={theorem},
-	description={conjectures that have been proven.}
+	description={conjectures that have been proven. A theorem is a statement that has been proven to be true based on a set of assumptions (hypotheses). It asserts that if the hypotheses are true, then a specific conclusion must also be true.}
+}
+
+\newglossaryentry{hypothesis}{
+    name={hypothesis},
+    description={In the context of a theorem, a hypothesis is an assumption or a set of assumptions that are stated within the theorem. If the hypotheses are true, they support the truth of the theorem's conclusion.},
+    plural={hypotheses}
+}
+
+\newglossaryentry{instance}{
+    name={instance},
+    description={An instance of a theorem is a specific case obtained by assigning particular values to the free variables within the theorem. For all instances where the hypotheses are true, the conclusion must also be true for the theorem to be correct.}
+}
+
+\newglossaryentry{counterexample}{
+    name={counterexample},
+    description={A counterexample to a theorem is a specific instance where the hypotheses of the theorem are true, but the conclusion is false. The existence of a counterexample disproves the theorem.}
 }
 
 \newglossaryentry{deductive reasoning}{
@@ -222,6 +238,16 @@
 \newglossaryentry{power set}{
     name={power set},
     description={The power set of a set $A$, denoted by $\text{\gls{symb:power set}}(A)$ or $2^A$, is the set of all subsets of $A$, including the empty set and $A$ itself. Formally, $\mathcal{P}(A) = \{B \mid B \subseteq A\}$.}
+}
+
+\newglossaryentry{given}{
+    name={given},
+    description={In the context of a proof, givens are the statements that are known or assumed to be true at a particular point in the proof process. Initially, the givens include the hypotheses of the theorem being proven, but they may later include other statements inferred from the hypotheses or added as new assumptions through transformations.}
+}
+
+\newglossaryentry{goal}{
+    name={goal},
+    description={In the context of a proof, the goal is the statement that remains to be proven at a particular point in the proof process. Initially, the goal is the conclusion of the theorem being proven, but it may change several times as transformations are applied during the course of the proof.}
 }
 
 % ==== SYMB GLOSSARY ====

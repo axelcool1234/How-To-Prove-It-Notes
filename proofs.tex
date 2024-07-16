@@ -277,7 +277,94 @@ Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets and $\mathcal{F} \c
     }
 
 \end{tikzpicture}\\
-On the goals side, we can existentially instantiate $A$ to be $A_0$ (since $A_0 \in \mathcal{G}$), which proves the goal since $x \in A_0$ (note that $x$ is arbitrary).
+On the goals side, we can existentially instantiate $A$ to be $A_0$ (since $A_0 \in \mathcal{G}$), which proves the goal since $x \in A_0$ (note that $x$ is arbitrary).\\
+
+\noindent Another example proof:\\
+Suppose $B$ is a set and $\mathcal{F}$ is a family of sets. Prove that if $\bigcup \mathcal{F} \subseteq B$ then $\mathcal{F} \subseteq \mathcal{P}(B)$.\\
+\begin{tikzpicture}
+    \beginProofBoxes{
+        \textemdash
+    }{
+        $\bigcup \mathcal{F} \subseteq B \rightarrow \mathcal{F} \subseteq \mathcal{P}(B)$
+    }
+
+    \addProofBoxes{
+        $\bigcup \mathcal{F} \subseteq B$
+    }{
+        $\mathcal{F} \subseteq \mathcal{P}(B)$
+    }
+
+    \addProofBoxes{
+        $\bigcup \mathcal{F} \subseteq B$
+    }{
+        $\forall x(x \in \mathcal{F} \rightarrow x \in \mathcal{P}(B))$
+    }
+
+    \addProofBoxes{
+        $\bigcup \mathcal{F} \subseteq B$
+    }{
+        $x \in \mathcal{F} \rightarrow x \in \mathcal{P}(B)$
+    }
+
+    \addProofBoxes{
+        $\bigcup \mathcal{F} \subseteq B$\\
+        $x \in \mathcal{F}$
+    }{
+        $x \in \mathcal{P}(B)$
+    }
+
+    \addProofBoxes{
+        $\bigcup \mathcal{F} \subseteq B$\\
+        $x \in \mathcal{F}$
+    }{
+        $x \subseteq B$
+    }
+
+    \addProofBoxes{
+        $\bigcup \mathcal{F} \subseteq B$\\
+        $x \in \mathcal{F}$
+    }{
+        $\forall y(y \in x \rightarrow y \in B)$
+    }
+
+    \addProofBoxes{
+        $\bigcup \mathcal{F} \subseteq B$\\
+        $x \in \mathcal{F}$
+    }{
+        $y \in x \rightarrow y \in B$
+    }
+
+    \addProofBoxes{
+        $\bigcup \mathcal{F} \subseteq B$\\
+        $x \in \mathcal{F}$\\
+        $y \in x$
+    }{
+        $y \in B$
+    }
+
+    \addProofBoxes{
+        $\bigcup \mathcal{F} \subseteq B$\\
+        $x \in \mathcal{F}$\\
+        $y \in x$
+    }{
+        $y \in \bigcup \mathcal{F}$
+    }
+
+    \addProofBoxes{
+        $\bigcup \mathcal{F} \subseteq B$\\
+        $x \in \mathcal{F}$\\
+        $y \in x$
+    }{
+        $\exists A \in \mathcal{F}(y \in A)$
+    }
+\end{tikzpicture}\\
+Since $x \in \mathcal{F}$, we can existentially instantiate the set $x$ for $A$ on the goal side. Since $y \in x$, we have just proven the goal.\\
+
+\noindent Theorem again:\\
+Suppose $B$ is a set and $\mathcal{F}$ is a family of sets. Prove that if $\bigcup \mathcal{F} \subseteq B$ then $\mathcal{F} \subseteq \mathcal{P}(B)$.\\
+
+\noindent Formalized Proof:\\
+Suppose $\bigcup \mathcal{F} \subseteq B$. Let $x$ be an arbitrary element of $\mathcal{F}$. Let $y$ be an arbitrary element of $x$. Since $y \in x$ and $x \in \mathcal{F}$, then by the definition of $\bigcup \mathcal{F}$, $y \in \bigcup \mathcal{F}$. Since $\bigcup \mathcal{F} \subseteq B$, then $y \in B$. Since $y$ was an arbitrary element of $x$, we can conclude that $x \subseteq B$ and thus $x \in \mathcal{P}(B)$. Since $x$ was an arbitrary element of $\mathcal{F}$, we can conclude that $\mathcal{F} \subseteq \mathcal{P}(B)$. Therefore, if $\bigcup \mathcal{F} \subseteq B$ is true, then $\mathcal{F} \subseteq \mathcal{P}(B)$ is true.
 
 \clearpage
 \printglossary[type=\acronymtype,style=long]  % list of acronyms

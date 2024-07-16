@@ -255,6 +255,26 @@
     description={In the context of a proof, the goal is the statement that remains to be proven at a particular point in the proof process. Initially, the goal is the conclusion of the theorem being proven, but it may change several times as transformations are applied during the course of the proof.}
 }
 
+\newglossaryentry{existential instantiation}{
+    name={existential instantiation},
+    description={A logical rule that allows one to introduce a new variable to stand for an object that satisfies an existential statement. If you have a given of the form $\exists x P(x)$, you can introduce a new variable $x_0$ to represent an object for which $P(x_0)$ is true, thereby allowing the assumption that $P(x_0)$ is true.}
+}
+
+\newglossaryentry{universal instantiation}{
+    name={universal instantiation},
+    description={A logical rule that allows one to derive a statement about a specific element from a universally quantified statement. If you have a given of the form $\forall x P(x)$, you can substitute any specific value, say $a$, for $x$ and conclude that $P(a)$ is true, allowing you to treat $P(a)$ as a new given.}
+}
+
+\newglossaryentry{modus ponens}{
+    name={modus ponens},
+    description={A logical rule that states if $P \rightarrow Q$ is true and $P$ is true, then $Q$ must also be true. Also known as the rule of detachment.}
+}
+
+\newglossaryentry{modus tollens}{
+    name={modus tollens},
+    description={A logical rule that states if $P \rightarrow Q$ is true and $Q$ is false, then $P$ must also be false. Also known as the rule of contrapositive.}
+}
+
 % ==== SYMB GLOSSARY ====
 \newglossaryentry{symb:therefore}{
 	name=$\therefore$,
@@ -361,7 +381,7 @@
 
 \newglossaryentry{symb:subset of}{
     name=$\subseteq$,
-    description={A is a subset of B, $A \subseteq B$, if every element of A is also an element of B.},
+    description={A is a subset of B, $A \subseteq B$, if every element of A is also an element of B. Logical form: $\forall x(x \in A \rightarrow x \in B)$},
     type=symbolslist
 }
 

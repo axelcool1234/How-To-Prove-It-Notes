@@ -205,7 +205,79 @@ If your proof makes no assumptions to what $x$ is, then we say that $x$ is \gls{
     }
 \end{tikzpicture}\\
 Formalized Proof:\\
-Let $x$ be arbitrary. [Proof of $P(x)$ goes here]. Since $x$ was arbitrary, we can conclude that $\forall xP(x)$.
+Let $x$ be arbitrary. [Proof of $P(x)$ goes here]. Since $x$ was arbitrary, we can conclude that $\forall xP(x)$.\\
+
+\noindent Proving a goal of the form $\exists xP(x)$ also involves introducing a variable $x$ but in this case $x$ isn't arbitrary but a value we can choose to bind it with. Since $\exists xP(x)$ is true as long as there's \textit{atleast} one value that makes $P(x)$ true, it's sufficient to prove $P(x)$ is true for just one value.\\
+
+\noindent Strategy:\\
+\begin{tikzpicture}
+    \beginProofBoxes{
+        \textemdash
+    }{
+        $\exists xP(x)$
+    }
+
+    \addProofBoxes{
+        $x = $ (the value you decided on)
+    }{
+        $P(x)$
+    }
+\end{tikzpicture}\\
+Formalized Proof:\\
+Let $x = $ (the value you decided on). [Proof of $P(x)$ goes here]. Thus, $\exists xP(x)$.\\
+
+\noindent If you have a given of the form $\exists xP(x)$, you can do \gls{existential instantiation} where you introduce a new variable $x_0$ to stand for an object for which $P(x_0)$ is true, allowing us to assume that $P(x_0)$ is true.\\
+
+\noindent If you have a given of the form $\forall xP(x)$, you can do \gls{universal instantiation} where you plug in any value, say $a$, for $x$ and use this to conclude that $P(a)$ is true (and thus you can treat $P(a)$ as a new given).\\
+
+\noindent Example proof:\\
+Suppose $\mathcal{F}$ and $\mathcal{G}$ are families of sets and $\mathcal{F} \cap \mathcal{G} \neq \varnothing$. Prove that $\bigcap \mathcal{F} \subseteq \bigcup \mathcal{G}$. 
+
+\begin{tikzpicture}
+    \beginProofBoxes{
+        $\mathcal{F} \cap \mathcal{G} \neq \varnothing$
+    }{
+        $\bigcap \mathcal{F} \subseteq \bigcup \mathcal{G}$
+    }
+
+    \addProofBoxes{
+        $\exists A(A \in \mathcal{F}, A \in \mathcal{G})$
+    }{
+        $\forall x(\forall A \in \mathcal{F}(x \in A) \rightarrow \exists A \in \mathcal{G}(x \in A))$
+    }
+
+    \addProofBoxes{
+        $\exists A(A \in \mathcal{F}, A \in \mathcal{G})$
+    }{
+        $\forall A \in \mathcal{F}(x \in A) \rightarrow \exists A \in \mathcal{G}(x \in A)$
+    }
+
+    \addProofBoxes{
+        $\exists A(A \in \mathcal{F}, A \in \mathcal{G})$\\
+        $\forall A \in \mathcal{F}(x \in A)$
+    }{
+        $\exists A \in \mathcal{G}(x \in A)$
+    }
+
+    \addProofBoxes{
+        $A_0 \in \mathcal{A}$\\ % (existential instantiation)
+        $A_0 \in \mathcal{G}$\\ % (existential instantiation)
+        $\forall A \in \mathcal{F}(x \in A)$
+    }{
+        $\exists A \in \mathcal{G}(x \in A)$
+    }
+
+    \addProofBoxes{
+        $A_0 \in \mathcal{F}$\\
+        $A_0 \in \mathcal{G}$\\
+        $x \in A_0$\\ % (universal instantiation)
+        $\forall A \in \mathcal{F}(x \in A)$
+    }{
+        $\exists A \in \mathcal{G}(x \in A)$
+    }
+
+\end{tikzpicture}\\
+On the goals side, we can existentially instantiate $A$ to be $A_0$ (since $A_0 \in \mathcal{G}$), which proves the goal since $x \in A_0$ (note that $x$ is arbitrary).
 
 \clearpage
 \printglossary[type=\acronymtype,style=long]  % list of acronyms

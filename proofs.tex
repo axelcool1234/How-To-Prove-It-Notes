@@ -1,7 +1,5 @@
 \documentclass{article}
 \input{preamble}
-\usepackage{tikz}
-\usetikzlibrary{positioning}
 
 \title{Proofs}
 \author{Axel Sorenson}
@@ -40,11 +38,14 @@ We can also transform proofs into equivalent proofs that are easier to write abo
     \draw[->] (box1) -- (box2);
     \draw[->] (box2) -- (box3);
 \end{tikzpicture} \\
-This transformation essentially means that if our theorem we are trying to prove has the form $P \rightarrow Q$, then we can assume $P$ to be true, adding it to our list of hypotheses, and then change the conclusion from $P \rightarrow Q$ to $Q$. This new form of the proof might be easier to solve, depending on the complexity of what $P$ and $Q$ is. Note that this doesn't solve the proof - it is just a transformation that can be used to create a new (hopefully easier) problem that must be solved.\\
+Form of the proof:\\
+Suppose $P$. [Proof of $Q$ goes here]. Therefore $P \rightarrow Q$.\\
+
+\noindent This transformation essentially means that if our theorem we are trying to prove has the form $P \rightarrow Q$, then we can assume $P$ (the \gls{antecedent}) to be true, adding it to our list of hypotheses, and then change the conclusion from $P \rightarrow Q$ to $Q$ (the \gls{consequent}). This new form of the proof might be easier to solve, depending on the complexity of what $P$ and $Q$ is. Note that this doesn't solve the proof - it is just a transformation that can be used to create a new (hopefully easier) problem that must be solved.\\
 
 \noindent A proof may have several transformations applied to it over time, and it's important that we keep track of the results of this sequence of transformations. We therefore introduce the following terminology. We will refer to the statements that are known or assumed to be true at some point in the course of figuring out a proof as \glspl{given}, and the statement that remains to be proven at that point as the \gls{goal}. When you are starting to figure out a proof, the givens will be just the hypotheses of the theorem you are proving, but they may later include other statements that have been inferred from the hypotheses or added as new assumptions as the result of some transformation of the problem. The goal will initially be the conclusion of the theorem, but it may be changed several times in the course of figuring out a proof.\\
 
-\noindent Note that the transformation technique described earlier is best described as enacted upon givens and goals as it can be used on transformations of the original proof rather than the proof itself. Here's an example of this transformation in action:
+\noindent Note that the transformation technique described earlier is best described as enacted upon givens and goals as it can be used on transformations of the original proof rather than just on the proof itself. Here's an example of this transformation in action:
 
 \noindent Suppose $a$ and $b$ are real numbers. Prove that if $0 < a < b$ then $a^2 < b^2$.\\
 Transformation:\\
@@ -72,7 +73,139 @@ Transformation:\\
     \draw[->] (box1) -- (box3);
     \draw[->] (box2) -- (box4);
 \end{tikzpicture} \\
-Multiplying $a < b$ by $a$ gives us $a^2 < ab$ and multiplying $a < b$ by $b$ gives us $ab < b^2$. Together that makes $a^2 < ab < b^2$, making our goal, $a^2 < b^2$, true.
+Multiplying $a < b$ by $a$ gives us $a^2 < ab$ and multiplying $a < b$ by $b$ gives us $ab < b^2$. Together that makes $a^2 < ab < b^2$, making our goal, $a^2 < b^2$, true.\\
+
+\noindent Transformations like these, when translated from the scratchwork of a proof to a formalized proof designed for other readers, often involve one or two sentences at the beginning and end of the proof to communicate this transformation. The work in the middle in between the beginning and end will then involve solving this new transformation of the problem. 
+
+\section{Proofs Involving Negations and Conditionals}
+When your goal is in the form $\neg P$, you should try to transform the problem so that the goal is not negated. If this isn't possible, then it's usually best to do a proof by contradiction.\\
+\begin{tikzpicture}[node distance=1cm, auto]
+    \node[draw, rectangle, text width=5cm, align=center] (box1) {
+        Givens:\\
+        \textemdash
+    };
+    \node[draw, rectangle, text width=5cm, align=center, right=of box1] (box2) {
+        Goal:\\
+        $\neg P$
+    };
+
+    \node[draw, rectangle, text width=5cm, align=center, below=of box1] (box3) {
+        Givens:\\
+        $P$
+    };
+    
+    \node[draw, rectangle, text width=5cm, align=center, below=of box2] (box4) {
+        Goal:\\
+        $Contradiction$
+    };
+
+    \draw[->] (box1) -- (box3);
+    \draw[->] (box2) -- (box4);
+\end{tikzpicture} \\
+Form of the proof:\\
+Suppose $P$ is true. [Proof of contradiction goes here]. Thus, $P$ is false.\\
+
+\noindent Note, that proof of contradictions often involve contradicting one of your givens (you can even try contradicting the given we just added, $P$).\\
+
+\noindent Proving a goal by contradiction has the advantage that it allows you to assume that your conclusion is false, providing you with another given to work with.
+
+\subsection{Exercises}
+1a. Suppose $P \rightarrow Q$ and $Q \rightarrow R$ are both true. Prove that $P \rightarrow R$ is true.\\
+
+\begin{tikzpicture}
+    \beginProofBoxes{
+        $P \rightarrow Q$\\
+        $Q \rightarrow R$\\
+    }{
+        $P \rightarrow R$
+    }
+
+    \addProofBoxes{
+        $P \rightarrow Q$\\
+        $Q \rightarrow R$\\
+        $P$
+    }{
+        $R$
+    }
+
+    \addProofBoxes{
+        $P \rightarrow Q$\\
+        $Q \rightarrow R$\\
+        $P$\\
+        $Q$\\
+    }{
+        $R$
+    }
+
+\end{tikzpicture}\\
+Formalized proof:\\
+Suppose $P$. Given $P$ and $P \rightarrow Q$, we know $Q$ is true. Given $Q$ and $Q \rightarrow R$, we know $R$ is true. Thus, if $P$ is true, then $R$ is true.\\
+
+\noindent 1b. Suppose $\neg R \rightarrow (P \rightarrow \neg Q)$ is true. Prove that $P \rightarrow (Q \rightarrow R)$ is true.\\
+
+\begin{tikzpicture}
+    \beginProofBoxes{
+        $\neg R \rightarrow (P \rightarrow \neg Q)$
+    }{
+        $P \rightarrow (Q \rightarrow R)$
+    }
+
+    \addProofBoxes{
+        $\neg R \rightarrow (P \rightarrow \neg Q)$\\
+        $P$
+    }{
+        $Q \rightarrow R$
+    }
+
+    \addProofBoxes{
+        $\neg R \rightarrow (P \rightarrow \neg Q)$\\
+        $P$\\
+        $Q$
+    }{
+        $R$
+    }
+
+    \addProofBoxes{
+        $\neg R \rightarrow (P \rightarrow \neg Q)$\\
+        $P$\\
+        $Q$\\
+        $\neg R$
+    }{
+        \textit{Contradiction}
+    }
+
+    \addProofBoxes{
+        $\neg R \rightarrow (P \rightarrow \neg Q)$\\
+        $P$\\
+        $Q$\\
+        $\neg R$\\
+        $P \rightarrow \neg Q$
+    }{
+        \textit{Contradiction}
+    }
+\end{tikzpicture}\\
+Formalized Proof:\\
+Suppose $P$. Suppose $Q$. Suppose $\neg R$. Given $\neg R$ and $\neg R \rightarrow (P \rightarrow \neg Q)$, we know $P \rightarrow \neg Q$ is true. Given $P$ and $P \rightarrow \neg Q$, we know $\neg Q$ is true. However, $Q$ is also true. We have hit a contradiction. Thus, $R$ is true. Given that $R$ is true when $Q$ is true, then $Q \rightarrow R$ is true. Given that $Q \rightarrow R$ is true when $P$ is true, then $P \rightarrow (Q \rightarrow R)$ is true. 
+
+\section{Proofs Involving Quantifiers}
+If your proof makes no assumptions to what $x$ is, then we say that $x$ is \gls{arbitrary}. In particular, you must not assume that $x$ is equal to any other object already under discussion in the proof. Thus, if the letter $x$ is already being used in the proof to stand for some particular object, then you cannot use it to stand for an arbitrary object. So, proving $\forall xP(x)$ involves ensuring that $x$ is arbitrary, and that a proof for $\forall xP(x)$ holds for all possible values $x$ can be.\\
+
+\noindent Strategy:\\
+\begin{tikzpicture}
+    \beginProofBoxes{
+        \textemdash
+    }{
+        $\forall xP(x)$
+    }
+
+    \addProofBoxes{
+        \textemdash
+    }{
+        $P(x)$
+    }
+\end{tikzpicture}\\
+Formalized Proof:\\
+Let $x$ be arbitrary. [Proof of $P(x)$ goes here]. Since $x$ was arbitrary, we can conclude that $\forall xP(x)$.
 
 \clearpage
 \printglossary[type=\acronymtype,style=long]  % list of acronyms

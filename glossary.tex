@@ -275,6 +275,21 @@
     description={A logical rule that states if $P \rightarrow Q$ is true and $Q$ is false, then $P$ must also be false. Also known as the rule of contrapositive.}
 }
 
+\newglossaryentry{case}{
+    name={case},
+    description={When one of your givens is a disjunction, such as $P \lor Q$, you need to consider two possibilities: if $P$ is true and if $Q$ is true. This involves creating separate arguments for each possibility to show that both lead to the goal.},
+}
+
+\newglossaryentry{exhaustive}{
+    name={exhaustive},
+    description={When all possible cases are considered to ensure that every scenario is accounted for. Mathematicians consider an argument \textit{exhaustive} if it includes all potential situations, ensuring completeness of the proof.}
+}
+
+\newglossaryentry{disjunctive syllogism}{
+    name={disjunctive syllogism},
+    description={A rule of inference stating that if you have a given of $P \lor Q$ and also a given of $\lnot P$, then you can conclude that $Q$ is true (adding it to your givens). Similarly, if you have a given of $P \lor Q$ and also a given of $\lnot Q$, then you can conclude that $P$ is true (adding it to your givens).}
+}
+
 % ==== SYMB GLOSSARY ====
 \newglossaryentry{symb:therefore}{
 	name=$\therefore$,
@@ -435,6 +450,6 @@
 
 \newglossaryentry{symb:divides}{
     name=$\mid$,
-    description={divides. $x \mid y$ means $x$ divides $y$, i.e., $\exists k \in \mathbb{Z}(kx = y)$.}
+    description={divides. $x \mid y$ means $x$ divides $y$, i.e., $\exists k \in \mathbb{Z}(kx = y)$.},
     type=symbolslist
 }

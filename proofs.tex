@@ -366,6 +366,65 @@ Suppose $B$ is a set and $\mathcal{F}$ is a family of sets. Prove that if $\bigc
 \noindent Formalized Proof:\\
 Suppose $\bigcup \mathcal{F} \subseteq B$. Let $x$ be an arbitrary element of $\mathcal{F}$. Let $y$ be an arbitrary element of $x$. Since $y \in x$ and $x \in \mathcal{F}$, then by the definition of $\bigcup \mathcal{F}$, $y \in \bigcup \mathcal{F}$. Since $\bigcup \mathcal{F} \subseteq B$, then $y \in B$. Since $y$ was an arbitrary element of $x$, we can conclude that $x \subseteq B$ and thus $x \in \mathcal{P}(B)$. Since $x$ was an arbitrary element of $\mathcal{F}$, we can conclude that $\mathcal{F} \subseteq \mathcal{P}(B)$. Therefore, if $\bigcup \mathcal{F} \subseteq B$ is true, then $\mathcal{F} \subseteq \mathcal{P}(B)$ is true.
 
+\noindent Practice:\\
+Theorem: For all integers $a$, $b$, and $c$, if $a \text{ \gls{symb:divides} }b$ and $b \mid c$ then $a \mid c$.\\ 
+\begin{tikzpicture}
+    \beginProofBoxes{
+        \textemdash
+    }{
+        $\forall a \in \mathbb{Z} \forall b \in \mathbb{Z} \forall c \in \mathbb{Z} (a \mid b \land b \mid c \rightarrow a \mid c)$
+    }
+
+    \addProofBoxes{
+        $a$, $b$, and $c$ are arbitrary integers
+    }{
+        $a \mid b \land b \mid c \rightarrow a \mid c$
+    }
+
+    \addProofBoxes{
+        $a$, $b$, and $c$ are arbitrary integers\\
+        $a \mid b$\\
+        $b \mid c$
+    }{
+        $a \mid c$
+    }
+
+    \addProofBoxes{
+        $a$, $b$, and $c$ are arbitrary integers\\
+        $\exists k \in \mathbb{Z} (ka = b)$\\
+        $\exists w \in \mathbb{Z} (wb = c)$
+    }{
+        $\exists q \in \mathbb{Z} (qa = c)$
+    }
+\end{tikzpicture}\\
+Formalized Proof: Let $a$, $b$, and $c$ be arbitrary integers and suppose $a \mid b$ and $b \mid c$. This means there exists some integer $k$ where $ka = b$ is true. This also means there exists some integer $w$ where $wb = c$ is true. This means that $kwa = wb = c$, and since $k$ and $w$ are integers, then the result of multiplying $k$ and $w$ is also an integer. This means there exists some integer when multiplied with $a$ gets $c$. Thus, if $a \mid b$ and $b \mid c$, then $a \mid c$.
+
+\section{Proofs Involving Conjunctions and Biconditionals}
+Proving conjunctions and biconditionals is as simple as proving each part individually. So if you have the given $A \land B \land C$, then you just need to prove $A$, $B$, and $C$.\\
+
+\noindent Proving $P \leftrightarrow Q$ (which is equivalent to $P \rightarrow Q \land Q \rightarrow P$) involves proving $P \rightarrow Q$ and proving $Q \rightarrow P$.\\
+
+\noindent Sometimes you can have a string of equivalences to get from $P$ to $Q$ when trying to prove $P \leftrightarrow Q$.\\
+Example:\\
+Theorem: Suppose $A$, $B$, and $C$ are sets. Then $A \cap (B \setminus C) = (A \cap B) \setminus C$.\\
+
+\noindent Proof:\\
+\noindent Let $x$ be arbitrary. Then:
+\begin{align}
+x \in A \cap (B \setminus C) \textiff& x \in A \land x \in B \setminus C \\
+\textiff& x \in A \land x \in B \land x \notin C \\
+\textiff& x \in (A \cap B) \land x \notin C \\
+\textiff& x \in (A \cap B) \setminus C 
+\end{align}
+Thus $\forall x(x \in A \cap (B \setminus C) \leftrightarrow x \in (A \cap B) \setminus C)$, so $A \cap (B \setminus C) = (A \cap B) \setminus C$.
+
+\section{Proofs Involving Disjunctions}
+When one of your givens is a disjunction, such as $P \lor Q$, there are two possibilities to account for: if $P$ is true, and if $Q$ is true. This means you need to use \glspl{case} where one case is if $P$ is true and the other case is if $Q$ is true and show that both individual possibilities lead to your goal. By considering all possibilities through these cases, this is considered \gls{exhaustive} by Mathematicians. Any proof can be broken up into two or more cases at any time, as long as the cases are exhaustive. Even though cases must be exhaustive, they do not need to be exclusive. Thus, if $P$ and $Q$ happen to both be true, this is okay. Basically: covering some possibilities several times in multiple cases is acceptable as long as all possibilities are covered.\\
+
+\noindent Sometimes a proof has a disjunction for a goal. We can split the proof into cases as long as it's exhaustive. It may be difficult to determine what the cases would be in this scenario. For a goal of $P \lor Q$, you can have case 1 where $P$ is assumed to be true, and in case 2 $P$ is assumed to be false. That means case 1 is trivial and no more work is needed for case 1. For case 2 you need to prove $Q$, because if $\lnot P$ is true, then $Q$ must be true for $P \lor Q$ to be true. Case 2 has a given of $\lnot P$ and a goal of $Q$. Note that this is a simple transformation! Recall that $P \lor Q$ is equivalent to $\lnot P \rightarrow Q$, and then we assume $\lnot P$, leaving $Q$ as the goal. This of course works in reverse, where we assume $\lnot Q$ and try and prove $P$ (achieved via transforming $P \lor Q$ to $\lnot Q \rightarrow P$).\\
+
+\noindent There's a rule of inference called the \gls{disjunctive syllogism}. If you have a given of $P \lor Q$ and also a given of $\lnot P$, then you can conclude that $Q$ is true (adding it to your givens). Similarly, if you have a given of $P \lor Q$ and also a given of $\lnot Q$, then you can conclude that $P$ is true (adding it to your givens).
+
 \clearpage
 \printglossary[type=\acronymtype,style=long]  % list of acronyms
 \printglossary[type=symbolslist,style=long]   % list of symbols

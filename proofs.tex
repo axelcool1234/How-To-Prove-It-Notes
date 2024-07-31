@@ -425,6 +425,17 @@ When one of your givens is a disjunction, such as $P \lor Q$, there are two poss
 
 \noindent There's a rule of inference called the \gls{disjunctive syllogism}. If you have a given of $P \lor Q$ and also a given of $\lnot P$, then you can conclude that $Q$ is true (adding it to your givens). Similarly, if you have a given of $P \lor Q$ and also a given of $\lnot Q$, then you can conclude that $P$ is true (adding it to your givens).
 
+\section{Existence and Uniqueness Proofs}
+If you have 3 statements that you want to prove are equivalent to one another, you can split your proof intro three conditionals you must prove individually: $1 \rightarrow 2$, $2 \rightarrow 3$, and $3 \rightarrow 1$.\\
+
+\noindent $\exists!xP(x)$ is equivalent to $\exists xP(x) \land \forall y \forall z((P(y) \land P(z)) \rightarrow y = z)$. A proof with the form $\exists!xP(x)$ is often split into two parts: the \textit{existence} (prove $\exists xP(x)$) and \textit{uniqueness} (prove $\forall y \forall z((P(y) \land P(z)) \rightarrow y = z)$) portions.\\
+
+\noindent $\exists!xP(x)$ is equivalent to:\\
+1. $\exists x(P(x) \land \forall y(P(y) \rightarrow y = x))$\\
+2. $\exists x \forall y(P(y) \leftrightarrow y = x)$\\
+3. $\exists xP(x) \land \forall y \forall z((P(y) \land P(z)) \rightarrow y = z)$
+
+
 \clearpage
 \printglossary[type=\acronymtype,style=long]  % list of acronyms
 \printglossary[type=symbolslist,style=long]   % list of symbols

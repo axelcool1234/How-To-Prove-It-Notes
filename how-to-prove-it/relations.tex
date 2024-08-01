@@ -63,6 +63,7 @@ Suppose $R$ is a relation on $A$.
     \item $R$ is said to be \gls{reflexive} on $A$ (or just reflexive, if $A$ is clear from context) if $\forall x \in A(xRx)$, or in other words $\forall x \in A((x,x) \in R)$.
     \item $R$ is said to be \gls{symmetric} if $\forall x \in A \forall y \in A(xRy \rightarrow yRx)$.
     \item $R$ is said to be \gls{transitive} if $\forall x \in A \forall y \in A \forall z \in A((xRy \land yRz) \rightarrow xRz)$.
+    \item $R$ is said to be \gls{antisymmetric} if $\forall x \in A \forall y \in A((xRy \land yRx) \rightarrow x = y)$
 \end{enumerate}
 If a relation is reflexive, then its directed graph will have \glspl{loop} on all its vertices.\\
 
@@ -77,6 +78,11 @@ Suppose $R$ is a relation on $A$.
 \end{enumerate}
 
 \section{Ordering Relations}
+Suppose $R$ is a relation on a set $A$. Then $R$ is called a \gls{partial order} on $A$ (or just a partial order if $A$ is clear from context) if it is reflexive, transitive, and antisymmetric. It is called a \gls{total order} on $A$ (or just a total order if $A$ is clear from context) if it is a partial order, and in addition it has the following propery:
+\begin{center}
+    $\forall x \in A \forall y \in A(xRy \lor yRx)$.
+\end{center}
+
 
 \clearpage
 \printglossary[type=\acronymtype,style=long]  % list of acronyms

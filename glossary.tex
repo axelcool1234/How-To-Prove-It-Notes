@@ -370,6 +370,26 @@
     description={For a set $A$, the identity relation $i_{A}$ is defined as $i_{A} = \{(x,y) \in A \times A \mid x = y \}$ or equivalently $i_{A} = \{(x,x) \mid x \in A \}$. The identity relation on any set $A$ is reflexive, symmetric, and transitive.},
 }
 
+\newglossaryentry{antisymmetric}{
+    name={antisymmetric},
+    description={A relation $R$ on a set $A$ is said to be antisymmetric if $\forall x \in A \forall y \in A ((xRy \land yRx) \rightarrow x = y)$. In other words, if $x$ is related to $y$ and $y$ is related to $x$ under the relation $R$, then $x$ must be equal to $y$.},
+}
+
+\newglossaryentry{partial order}{
+    name={partial order},
+    description={A relation $R$ on a set $A$ is called a partial order on $A$ (or just a partial order if $A$ is clear from context) if it is reflexive, transitive, and antisymmetric. In other words, $R$ is a partial order if for all $x, y, z \in A$:
+        \begin{itemize}
+            \item Reflexive: $xRx$,
+            \item Transitive: $xRy \land yRz \rightarrow xRz$,
+            \item Antisymmetric: $xRy \land yRx \rightarrow x = y$.
+        \end{itemize}},
+}
+
+\newglossaryentry{total order}{
+    name={total order},
+    description={A relation $R$ on a set $A$ is called a total order on $A$ (or just a total order if $A$ is clear from context) if it is a partial order, and in addition it has the property that for all $x, y \in A$, $xRy$ or $yRx$ (i.e., the relation $R$ is comparable for every pair of elements in $A$). In other words, $R$ is a total order if it is reflexive, transitive, antisymmetric, and for any $x, y \in A$ either $xRy$ or $yRx$ holds.},
+}
+
 % ==== SYMB GLOSSARY ====
 \newglossaryentry{symb:therefore}{
 	name=$\therefore$,

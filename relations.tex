@@ -1,0 +1,24 @@
+\documentclass{article}
+\input{preamble}
+
+\title{Relations}
+\author{Axel Sorenson}
+\date{July 31st, 2024}
+
+\begin{document}
+\maketitle
+
+\section{Ordered Pairs and Cartesian Products}
+When making a truth set for a statement with more than one free variables, the truth set will not contain individual values, but rather ordered pairs of values. The order of values in an ordered pair makes a difference. That means $(6, 18)$ is not the same as $(18, 6)$. When referring to $a$, $b$, $c$, etc. in an ordered pair $(a, b, c, ...)$, we call them \glspl{coordinate}. $a$ is the first coordinate, $b$ is the second, etc.\\
+
+\noindent Suppose $A$ and $B$ are sets. Then the Cartesian product of $A$ and $B$, denoted $A \times B$, is the set of all ordered pairs in which the first coordinate is an element of $A$ and the second is an element of $B$. In other words,
+\begin{center}
+$A \times B = \{(a,b) \mid a \in A \text{ and } b \in B\}$.
+\end{center}
+
+
+\clearpage
+\printglossary[type=\acronymtype,style=long]  % list of acronyms
+\printglossary[type=symbolslist,style=long]   % list of symbols
+\printglossary[type=main]                     % main glossary
+\end{document}

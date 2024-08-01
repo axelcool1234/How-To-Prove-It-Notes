@@ -305,6 +305,71 @@
     description={A set that contains exactly one element. For example, $\{a\}$ is a singleton set containing the element $a$.}
 }
 
+\newglossaryentry{relationship}{
+    name={relationship},
+    description={A connection or association between two or more variables, often expressed as a statement involving those variables. For example, $P(x, y)$ can express a relationship between $x$ and $y$.}
+}
+
+\newglossaryentry{relation}{
+    name={relation},
+    description={Suppose $A$ and $B$ are sets. Then a set $R \subseteq A \times B$ is called a relation from $A$ to $B$. It represents a set of ordered pairs $(a, b)$ where $a \in A$ and $b \in B$, capturing when a certain relationship holds between elements of $A$ and $B$.}
+}
+
+\newglossaryentry{domain}{
+    name={domain},
+    description={Suppose $R$ is a relation from $A$ to $B$. The domain of $R$ is the set $\text{Dom}(R) = \{a \in A \mid \exists b \in B((a,b) \in R)\}$. It represents all elements $a$ in $A$ that are related to some element $b$ in $B$.}
+}
+
+\newglossaryentry{range}{
+    name={range},
+    description={Suppose $R$ is a relation from $A$ to $B$. The range of $R$ is the set $\text{Ran}(R) = \{b \in B \mid \exists a \in A((a,b) \in R)\}$. It represents all elements $b$ in $B$ that are related to some element $a$ in $A$.}
+}
+
+\newglossaryentry{inverse}{
+    name={inverse},
+    description={Suppose $R$ is a relation from $A$ to $B$. The inverse of $R$ is the set $R^{-1} = \{(b,a) \in B \times A \mid (a,b) \in R\}$. It represents the set of ordered pairs where the roles of the elements in $A$ and $B$ are reversed.}
+}
+
+\newglossaryentry{composition}{
+    name={composition},
+    description={Suppose $R$ is a relation from $A$ to $B$ and $S$ is a relation from $B$ to $C$. The composition of $S$ and $R$ is the relation $S \circ R$ from $A$ to $C$ defined as $S \circ R = \{(a,c) \in A \times C \mid \exists b \in B((a,b) \in R \text{ and } (b,c) \in S)\}$. It represents the set of ordered pairs $(a, c)$ where there exists an element $b$ such that $a$ is related to $b$ by $R$ and $b$ is related to $c$ by $S$.}
+}
+
+\newglossaryentry{relation on}{
+    name={relation on},
+    description={A relation $R$ from set $A$ to the same set $A$ is called a relation on $A$.},
+}
+
+\newglossaryentry{directed graph}{
+    name={directed graph},
+    description={A directed graph is a set of vertices connected by edges, where each edge has a direction associated with it, going from one vertex to another. This direction indicates a relationship between the vertices, often represented as an ordered pair of vertices $(a, b)$. In a directed graph, the edge $(a, b)$ is different from the edge $(b, a)$.},
+}
+
+\newglossaryentry{reflexive}{
+    name={reflexive},
+    description={A relation $R$ on a set $A$ is said to be reflexive if $\forall x \in A((x, x) \in R)$. In other words, every element is related to itself.},
+}
+
+\newglossaryentry{symmetric}{
+    name={symmetric},
+    description={A relation $R$ on a set $A$ is said to be symmetric if $\forall x \in A \forall y \in A((x, y) \in R \rightarrow (y, x) \in R)$. In other words, if one element is related to another, then the second element is related to the first.},
+}
+
+\newglossaryentry{transitive}{
+    name={transitive},
+    description={A relation $R$ on a set $A$ is said to be transitive if $\forall x \in A \forall y \in A \forall z \in A(((x, y) \in R \land (y, z) \in R) \rightarrow (x, z) \in R)$. In other words, if an element is related to a second element, which is related to a third element, then the first element is related to the third element.},
+}
+
+\newglossaryentry{loop}{
+    name={loop},
+    description={In a directed graph, a loop is an edge that connects a vertex to itself. If a relation is reflexive, its directed graph will have loops on all its vertices.},
+}
+
+\newglossaryentry{identity relation}{
+    name={identity relation},
+    description={For a set $A$, the identity relation $i_{A}$ is defined as $i_{A} = \{(x,y) \in A \times A \mid x = y \}$ or equivalently $i_{A} = \{(x,x) \mid x \in A \}$. The identity relation on any set $A$ is reflexive, symmetric, and transitive.},
+}
+
 % ==== SYMB GLOSSARY ====
 \newglossaryentry{symb:therefore}{
 	name=$\therefore$,
@@ -472,5 +537,11 @@
 \newglossaryentry{symb:divides}{
     name=$\mid$,
     description={divides. $x \mid y$ means $x$ divides $y$, i.e., $\exists k \in \mathbb{Z}(kx = y)$.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:composition}{
+    name=$\circ$,
+    description={Composition of relations. If $R$ is a relation from $A$ to $B$ and $S$ is a relation from $B$ to $C$, then the \gls{composition} $S \circ R$ is the relation from $A$ to $C$ defined as $S \circ R = \{(a,c) \in A \times C \mid \exists b \in B((a,b) \in R \text{ and } (b,c) \in S)\}$.},
     type=symbolslist
 }

@@ -387,7 +387,92 @@
 
 \newglossaryentry{total order}{
     name={total order},
-    description={A relation $R$ on a set $A$ is called a total order on $A$ (or just a total order if $A$ is clear from context) if it is a partial order, and in addition it has the property that for all $x, y \in A$, $xRy$ or $yRx$ (i.e., the relation $R$ is comparable for every pair of elements in $A$). In other words, $R$ is a total order if it is reflexive, transitive, antisymmetric, and for any $x, y \in A$ either $xRy$ or $yRx$ holds.},
+    description={A relation $R$ on a set $A$ is called a total order on $A$ (or just a total order if $A$ is clear from context) if it is a partial order, and in addition it has the property that for all $x, y \in A$, $xRy$ or $yRx$ (i.e., the relation $R$ is comparable for every pair of elements in $A$). In other words, $R$ is a total order if it is reflexive, transitive, antisymmetric, and for any $x, y \in A$ either $xRy$ or $yRx$ holds. Note that a total order has only one minimal element, which is also the smallest element. Note that a total order has only one maximal element, which is also the largest element.},
+}
+
+\newglossaryentry{smallest}{
+    name={smallest},
+    description={Suppose $R$ is a partial order on a set $A$, $B \subseteq A$, and $b \in B$. Then $b$ is called an $R$-smallest of $B$ (or just a smallest element if $R$ is clear from the context) if $\forall x \in B(bRx)$. This means that $b$ is related to every other element in $B$ by the relation $R$, with $b$ on the left side, indicating it is "smaller" than every other element in $B$. Note that if there is a smallest element, it is unique. Note that it'd also be the only minimal element. Note that if there is a smallest element, it is the greatest lower bound.},
+}
+
+\newglossaryentry{minimal}{
+    name={minimal},
+    description={Suppose $R$ is a partial order on a set $A$, $B \subseteq A$, and $b \in B$. Then $b$ is called an $R$-minimal element (or just a minimal element if $R$ is clear from the context) if $\lnot \exists x \in B(xRb \land x \neq b)$. This means that there does not exist an element $x \in B$ such that $x$ is related to $b$ by the relation $R$ with $x$ on the left side (indicating $b$ is "bigger"), and $x$ is not equal to $b$.},
+}
+
+\newglossaryentry{largest}{
+    name={largest},
+    description={Suppose $R$ is a partial order on a set $A$, $B \subseteq A$, and $b \in B$. Then $b$ is called an $R$-largest of $B$ (or just a largest element if $R$ is clear from the context) if $\forall x \in B(xRb)$. This means that $b$ is related to every other element in $B$ by the relation $R$, with $b$ on the right side, indicating it is "larger" than every other element in $B$. Note that if there is a largest element, it is unique. Note that it’d also be the only maximal element. Note that if there is a largest element, it is the lowest upper bound.},
+}
+
+\newglossaryentry{maximal}{
+    name={maximal},
+    description={Suppose $R$ is a partial order on a set $A$, $B \subseteq A$, and $b \in B$. Then $b$ is called an $R$-maximal element (or just a maximal element if $R$ is clear from the context) if $\lnot \exists x \in B(bRx \land x \neq b)$. This means that there does not exist an element $x \in B$ such that $b$ is related to $x$ by the relation $R$ with $b$ on the left side (indicating $b$ is "smaller"), and $x$ is not equal to $b$.},
+}
+
+\newglossaryentry{lower bound}{
+    name={lower bound},
+    description={Suppose $R$ is a partial order on $A$, $B \subseteq A$, and $a \in A$. Then $a$ is called a lower bound for $B$ if $\forall x \in B(aRx)$. This means that $a$ is related to every element in $B$ by the relation $R$, with $a$ on the left side, indicating it is "smaller" than every element in $B$. Note that a lower bound for $B$ need not be an element of $B$, which is the only difference between lower bounds and smallest elements.},
+}
+
+\newglossaryentry{upper bound}{
+    name={upper bound},
+    description={Suppose $R$ is a partial order on $A$, $B \subseteq A$, and $a \in A$. Then $a$ is called an upper bound for $B$ if $\forall x \in B(xRa)$. This means that $a$ is related to every element in $B$ by the relation $R$, with $a$ on the right side, indicating it is "larger" than every element in $B$. Note that an upper bound for $B$ need not be an element of $B$, which is the only difference between upper bounds and largest elements.},
+}
+
+\newglossaryentry{least upper bound}{
+    name={least upper bound},
+    description={Suppose $R$ is a partial order on $A$ and $B \subseteq A$. Let $U$ be the set of all upper bounds for $B$. If $U$ has a smallest element, then this smallest element is called the least upper bound of $B$. The least upper bound is sometimes abbreviated as l.u.b.},
+}
+
+\newglossaryentry{greatest lower bound}{
+    name={greatest lower bound},
+    description={Suppose $R$ is a partial order on $A$ and $B \subseteq A$. Let $L$ be the set of all lower bounds for $B$. If $L$ has a largest element, then this largest element is called the greatest lower bound of $B$. The greatest lower bound is sometimes abbreviated as g.l.b.},
+}
+
+\newglossaryentry{equivalence relation}{
+    name={equivalence relation},
+    description={Suppose $R$ is a relation on a set $A$. Then $R$ is called an equivalence relation on $A$ (or just an equivalence relation if $A$ is clear from context) if it is reflexive, symmetric, and transitive.},
+}
+
+\newglossaryentry{equivalence class}{
+    name={equivalence class},
+    description={Given a set $A$ with a relation $R$ on $A$, an equivalence class for $R$ is a subset of $A$ consisting of all elements that are related to each other by $R$. More formally, for an element $a \in A$, the equivalence class of $a$ under $R$ is the set $\{x \in A \mid aRx\}$. Note that different equivalence classes are disjoint. In other words, equivalence classes are either identical or disjoint (i.e. given set $A$ where $x,y \in A$, if $[x]$ and $[y]$ are identical, then we're referring to the same equivalence class. If they're not the same equivalence class, then they're disjoint). Also note that all equivalence classes are nonempty.},
+    plural={equivalence classes},
+}
+
+\newglossaryentry{partition}{
+    name={partition},
+    description={A partition of a set $A$ is a family $\mathcal{F}$ of non-empty subsets of $A$ such that:
+        \begin{enumerate}
+            \item The union of all subsets in $\mathcal{F}$ equals $A$: $\bigcup \mathcal{F} = A$.
+            \item The subsets in $\mathcal{F}$ are pairwise disjoint: $\forall X, Y \in \mathcal{F}$ with $X \neq Y$, $X \cap Y = \varnothing$.
+        \end{enumerate}
+        This means that every element of $A$ belongs to exactly one subset in $\mathcal{F}$.},
+}
+
+\newglossaryentry{pairwise disjoint}{
+    name={pairwise disjoint},
+    description={A family $\mathcal{F}$ of sets is pairwise disjoint if every pair of distinct sets in $\mathcal{F}$ are disjoint. Formally, $\mathcal{F}$ is pairwise disjoint if $\forall X, Y \in \mathcal{F}$, with $X \neq Y$, it holds that $X \cap Y = \varnothing$.},
+}
+
+\newglossaryentry{quotient set}{
+    name={quotient set},
+    description={Suppose $A$ is a set with an equivalence relation $R$. The set of all equivalence classes of elements of $A$ under $R$ is called the \textit{quotient set} and is denoted by $A/R$. Formally,
+        \[
+        A/R = \{[x]_{R} \mid x \in A\} = \{X \subseteq A \mid \exists x \in A(X = [x]_{R})\}.
+        \]
+        This means that $A/R$ is the set containing all equivalence classes $[x]_{R}$ of elements $x$ in $A$.},
+}
+
+\newglossaryentry{lemma}{
+    name={lemma},
+    description={A fact that is proven primarily for the purpose of being used to prove a theorem. Lemmas are intermediate propositions or auxiliary theorems that assist in establishing a larger result.}
+}
+
+\newglossaryentry{congruent}{
+    name={congruent},
+    description={Given a positive integer $m$, two integers $x$ and $y$ are said to be congruent modulo $m$ if there exists an integer $k$ such that $x - y = km$. In other words, $x$ is congruent to $y$ modulo $m$ if and only if $m$ divides $(x - y)$. This is denoted as $x \equiv y \, (\text{mod } m)$. Two numbers being congruent modulo $m$ means they have the same remainder when divided by $m$.}
 }
 
 % ==== SYMB GLOSSARY ====
@@ -563,5 +648,11 @@
 \newglossaryentry{symb:composition}{
     name=$\circ$,
     description={Composition of relations. If $R$ is a relation from $A$ to $B$ and $S$ is a relation from $B$ to $C$, then the \gls{composition} $S \circ R$ is the relation from $A$ to $C$ defined as $S \circ R = \{(a,c) \in A \times C \mid \exists b \in B((a,b) \in R \text{ and } (b,c) \in S)\}$.},
+    type=symbolslist
+}
+
+\newglossaryentry{symb:congruent}{
+    name={$\equiv$},
+    description={Denotes congruence in modular arithmetic. Specifically, $ x \equiv y \, (\text{mod } m) $ means that integers $x$ and $y$ are congruent modulo $m$, which is equivalent to stating that $m$ divides the difference $x - y$. This symbol is used to indicate that two numbers have the same remainder when divided by $m$.},
     type=symbolslist
 }

@@ -82,7 +82,40 @@ Suppose $R$ is a relation on a set $A$. Then $R$ is called a \gls{partial order}
 \begin{center}
     $\forall x \in A \forall y \in A(xRy \lor yRx)$.
 \end{center}
+Some definitions:\\
+Suppose $R$ is a partial order on a set $A$, $B \subseteq A$, and $b \in B$. Then $b$ is called an R-\gls{smallest} of $B$ (or just a smallest element if $R$ is clear from the context) if $\forall x \in B(bRx)$. It is called an R-\gls{minimal} element (or just a minimal element if $R$ is clear from the context) if $\lnot \exists x \in B(xRb \land x \neq b)$. Similary, $b$ is called an R-\gls{largest} of $B$ (or just a largest element if $R$ is clear from the context) if $\forall x \in B(xRb)$. It is called an R-\gls{maximal} element (or just a maximal element if $R$ is clear from the context) if $\lnot \exists x \in B(bRx \land x \neq b)$.\\
 
+\noindent Suppose $R$ is a partial order on $A$, $B \subseteq A$, and $a \in A$. Then $a$ is called a \gls{lower bound} for $B$ if $\forall x \in B(aRx)$. Similarly, it is an \gls{upper bound} for $B$ if $\forall x \in B(xRa)$.\\
+
+\noindent Suppose $R$ is a partial order on $A$ and $B \subseteq A$. Let $U$ be the set of all upper bounds for $B$, and let $L$ be the set of all lower bounds. If $U$ has a smallest element, then this smallest element is called the \gls{least upper bound} of $B$. If $L$ has a largest element, then this largest element is called the \gls{greatest lower bound} of $B$. The phrases least upper bound and greatest lower bound are sometimes abbreviated l.u.b. and g.l.b.
+
+\section{Equivalence Relations}
+Suppose $R$ is a relation on a set $A$. Then $R$ is called an \gls{equivalence relation} on $A$ (or just an equivalence relation if $A$ is clear from context) if it is reflexive, symmetric, and transitive.\\
+
+\noindent Given a set $A$ with a relation $R$ on $A$, there are \glspl{equivalence class} for that relation such that every element in $A$ is an element of exactly one of the equivalence classes. The relation $R$ consists of those pairs $(p, q) \in A \times A$ such that the elements $p$ and $q$ are in the same equivalence class. We can form a family $\mathcal{F}$ of subsets of $A$ where each subset is one of these equivalence classes. Given that this breaks up $A$ into disjoint pieces, we can call the family $\mathcal{F}$ a \gls{partition} of $A$. It turns out that every equivalence relation on a set $A$ determines a partition of $A$, whose elements are the equivalence classes for the equivalence relation.\\
+
+\noindent A family $\mathcal{F}$ is \gls{pairwise disjoint} if every pair of distince elements of $\mathcal{F}$ are disjoint. In other words, $\forall X \in \mathcal{F} \forall Y \in \mathcal{F}(X \neq Y \rightarrow X \cap Y = \varnothing)$.\\
+
+\noindent To be more formal, a family $\mathcal{F}$ is a partition of $A$ if
+\begin{enumerate}
+    \item $\bigcup \mathcal{F} = A$.
+    \item $\mathcal{F}$ is pairwise disjoint.
+    \item $\forall X \in \mathcal{F}(X \neq \varnothing)$.
+\end{enumerate}
+
+\noindent To be more formal: Suppose $R$ is an equivalence relation on a set $A$, and $x \in A$. Then the equivalance class of $x$ with respect to $R$ is the set
+\begin{center}
+    $[x]_{R} = \{y \in A \mid yRx\}$.
+\end{center}
+If $R$ is clear from context, then we write $[x]$ instead of $[x]_{R}$. The set of all equivalence classes of elements of $A$ is called $A$ modulo $R$, and is called $A$ \textit{modulo} $R$, and is denoted $A/R$. Thus,
+\begin{center}
+$A/R = \{[x]_{R} \mid x \in A\} = \{X \subseteq A \mid \exists x \in A(X = [x]_{R})\}$.
+\end{center}
+This is known as the \gls{quotient set}.\\
+
+\noindent Facts that are proven primarily for the purpose of using them to prove a theorem are usually called \glspl{lemma}.\\
+
+\noindent Suppose $m$ is a positive integer. For any integers $x$ and $y$, we will say that $x$ is \gls{congruent} to $y$ modulo $m$ if $\exists k \in Z(x - y = km)$. In other words, $x$ is congruent to $y$ modulo $m \textiff m \mid (x - y)$. We will use the notation $x \text{ \gls{symb:congruent} } y (\text{mod } m)$ to mean that $x$ is congruent to $y$ modulo $m$.
 
 \clearpage
 \printglossary[type=\acronymtype,style=long]  % list of acronyms

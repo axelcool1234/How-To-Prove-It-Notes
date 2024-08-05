@@ -1,0 +1,80 @@
+\documentclass{article}
+\input{preamble}
+
+\title{Functions}
+\author{Axel Sorenson}
+\date{August 4th, 2024}
+
+\begin{document}
+\maketitle
+
+\section{Functions}
+Suppose $F$ is a relation from $A$ to $B$. Then $F$ is called a \gls{function} from $A$ to $B$ if for every $a \in A$ there is exactly one $b \in B$ such that $(a, b) \in F$. In other words, to say that $F$ is a function from $A$ to $B$ means:
+\begin{center}
+    $\forall a \in A \exists!b \in B((a, b) \in F)$.
+\end{center}
+To indicate that $F$ is a function from $A$ to $B$, we will write $F \text{: } A \text{ \gls{symb:function} } B$.\\
+
+\noindent Suppose $f \text{: } A \to B$. $\forall a \in A \text{ and } \forall b \in B$, $b = f(a) \textiff (a, b) \in f$.\\
+
+\noindent If $A$ is any set and $a \in A$, then $(a, a) \in i_{A}$, so $i_{A}(a) = a$.\\
+
+\noindent A function $f$ from a set $A$ to another set $B$ is often specified by giving a rule that can be used to determine $f(a)$ for any $a \in A$.\\
+
+\noindent Any subset of $A \times B$ that satisfies the formal definition of a function above is a function from $A$ to $B$.\\
+
+\noindent Suppose $f$ and $g$ are functions from $A$ to $B$. If $\forall a \in A(f(a) = g(a))$, then $f = g$. This means, to prove that two functions $f$ and $g$ are equal, we must prove $\forall a \in A(f(a) = g(a))$.\\
+
+\noindent Suppose $f$ is a function from $A$ to $B$. The second coordinate of an ordered pair in $f$ is what we have called the \gls{image} of its first coordinate. Thus, the range of $f$ could also be described as the set of all images of elements of $A$ under $f$:
+\begin{center}
+    $\text{Ran}(f) = \{f(a) \mid a \in A \}$.
+\end{center}
+As for the domain of $f$: the subset of $A$ for the domain of $f$ happens to be all of $A$ since every element of $A$ must appear as the coordinate of one ordered pair in $f$.\\
+
+\noindent The definition of \gls{composition} of relations can also be applied to functions. If $f \text{: } A \to B$ and $g \text{: } B \to C$, then $f$ is a relation from $A$ to $B$ and $g$ is a relation from $B$ to $C$, so $g \circ f$ will be a relation from $A$ to $C$. In fact, it turns out that $g \circ f$ is a function from $A$ to $C$, as the next theorem shows:
+\begin{center}
+Suppose $f \text{: } A \to B$ and $g \text{: } B \to C$. Then $g \circ f \text{: } A \to C$, and for any $a \in A$, the value of $g \circ f$ at $a$ is given by the formula $(g \circ f)(a) = g(f(a))$.
+\end{center}
+$(g \circ f)(a) = c = g(b) = g(f(a))$.
+
+\section{One-to-One and Onto}
+The following are two properties of functions:\\
+
+\noindent Suppose $f \text{: } A \to B$. We will say that $f$ is \gls{one-to-one} if:
+\begin{center}
+    $\lnot \exists a_{1} \in A \exists a_{2} \in A(f(a_{1}) = f(a_{2}) \land a_{1} \neq a_{2})$.
+\end{center}
+We say that $f$ maps \gls{onto} $B$ (or just is onto if $B$ is clear from context) if:
+\begin{center}
+    $\forall b \in B \exists a \in A(f(a) = b)$.
+\end{center}
+One-to-one functions are sometimes called \glspl{injection}, and onto functions are sometimes called \glspl{surjection}.\\
+
+\noindent Suppose $f \text{: } A \to B$
+\begin{enumerate}
+    \item $f$ is one-to-one$\textiff \forall a_{1} \in A \forall a_{2} \in A(f(a_{1}) = f(a_{2}) \rightarrow a_{1} = a_{2})$.
+    \item $f$ is onto$\textiff \text{Ran}(f) = B$.
+\end{enumerate}
+
+\noindent Suppose $f \text{: } A \to B$ and $g \text{: } B \to C$. It follows that $g \circ f \text{: } A \to C$.
+\begin{enumerate}
+    \item If $f$ and $g$ are both one-to-one, then so is $g \circ f$.
+    \item If $f$ and $g$ are both onto, then so is $g \circ f$.
+\end{enumerate}
+Functions that are both one-to-one and onto are particularly important in mathematics. Such functions are sometimes called \glspl{one-to-one correspondence} or \glspl{bijection}. If there is a one-to-one correspondence between two finite sets, then the sets must have the same number of elements. This is one of the reasons why one-to-one correspondences are so important. 
+
+\section{Inverses of Functions}
+The inverse of a function from $A$ to $B$ is not always a function from $B$ to $A$. For example, an element of $B$ may not be paired with an element of $A$. Additionally, an element of $B$ may be paired more than once with elements of $A$. Both of these scenarios leads to a failure to meet the requirements of the definition of being a function. You may have noticed that the reasons why $f^{-1}$ isn't a function from $B$ to $A$ are related to the reasons why $f$ is neither one-to-one nor onto.\\
+
+\noindent Suppose $f \text{: } A \to B$. If $f$ is one-to-one and onto, then $f^{-1} \text{: } B \to A$. If $f^{-1}$ is a function from $B$ to $A$, then $f$ must be one-to-one and onto. \\
+
+\noindent The composition of a function and its inverse (given that the inverse is also a function), results in the identity function. To better see this, suppose $f \text{: } A \to B$ and $f^{-1} \text{: } B \to A$.
+\begin{center}
+    $(f^{-1} \circ f)(a) = f^{-1}(f(a)) = f^{-1}(b) = a = i_{A}(a)$.
+$(f \circ f^{-1})(b) = f(f^{-1}(b)) = f(a) = b = i_{B}(b)$.
+\end{center}
+\clearpage
+\printglossary[type=\acronymtype,style=long]  % list of acronyms
+\printglossary[type=symbolslist,style=long]   % list of symbols
+\printglossary[type=main]                     % main glossary
+\end{document}

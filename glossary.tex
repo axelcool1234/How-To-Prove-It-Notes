@@ -475,6 +475,79 @@
     description={Given a positive integer $m$, two integers $x$ and $y$ are said to be congruent modulo $m$ if there exists an integer $k$ such that $x - y = km$. In other words, $x$ is congruent to $y$ modulo $m$ if and only if $m$ divides $(x - y)$. This is denoted as $x \equiv y \, (\text{mod } m)$. Two numbers being congruent modulo $m$ means they have the same remainder when divided by $m$.}
 }
 
+\newglossaryentry{function}{
+    name={function},
+    description={A function $F$ from a set $A$ to a set $B$ is a relation such that for every element $a \in A$, there exists exactly one element $b \in B$ such that the ordered pair $(a, b) \in F$. Formally, $F$ is a function from $A$ to $B$ if:
+        \[
+        \forall a \in A \exists! b \in B ((a, b) \in F).
+        \]
+    This ensures that each input from the domain $A$ is associated with a unique output in the codomain $B$. Functions are often denoted as $F \text{: } A \to B$.}
+}
+
+\newglossaryentry{image}{
+    name={image},
+    description={Suppose $f$ is a function from a set $A$ to a set $B$. The image of an element $a \in A$ under $f$ is the second coordinate of the ordered pair $(a, f(a))$ in the relation that defines the function. In other words, if $f: A \to B$, then $f(a) \in B$ is the image of $a \in A$. The range of $f$, which is the set of all possible images of elements of $A$ under $f$, is given by:
+        \[
+        \text{Ran}(f) = \{f(a) \mid a \in A\}.
+        \]
+        This set contains all elements in $B$ that are mapped to by some element in $A$.}
+}
+
+\newglossaryentry{one-to-one}{
+    name={one-to-one},
+    description={
+        Suppose $f \text{: } A \to B$. The function $f$ is said to be one-to-one if for any two elements $a_{1}, a_{2} \in A$, whenever $f(a_{1}) = f(a_{2})$ it must follow that $a_{1} = a_{2}$. In other words, no two distinct elements of $A$ map to the same element in $B$. Formally:
+        \[
+        \lnot \exists a_{1} \in A \exists a_{2} \in A(f(a_{1}) = f(a_{2}) \land a_{1} \neq a_{2}).
+        \]
+    }
+}
+
+\newglossaryentry{onto}{
+    name={onto},
+    description={
+        Suppose $f \text{: } A \to B$. The function $f$ maps onto $B$ (or is onto) if every element of $B$ is the image of at least one element in $A$. That is, for every $b \in B$, there exists an $a \in A$ such that $f(a) = b$. Formally:
+        \[
+        \forall b \in B \exists a \in A(f(a) = b).
+        \]
+    }
+}
+
+\newglossaryentry{injection}{
+    name={injection},
+    description={An injection is another term for a \gls{one-to-one} function.}
+}
+
+\newglossaryentry{surjection}{
+    name={surjection},
+    description={A surjection is another term for an \gls{onto} function.}
+}
+
+\newglossaryentry{one-to-one correspondence}{
+    name={one-to-one correspondence},
+    description={A function $f \text{: } A \to B$ is called a one-to-one correspondence if it is both one-to-one and onto. This means that $f$ maps each element of $A$ to a unique element of $B$ and covers all elements of $B$. In other words, $f$ is both an injection and a surjection.}
+}
+
+\newglossaryentry{bijection}{
+    name={bijection},
+    description={A bijection is another term for a one-to-one correspondence.}
+}
+
+\newglossaryentry{sufficient}{
+    name={sufficient},
+    description={A condition $P$ is called sufficient for a condition $Q$ if $P$ implies $Q$. In other words, whenever $P$ is true, $Q$ must also be true.}
+}
+
+\newglossaryentry{necessary}{
+    name={necessary},
+    description={A condition $Q$ is called necessary for a condition $P$ if $P$ implies $Q$. In other words, for $P$ to be true, $Q$ must also be true.}
+}
+
+\newglossaryentry{converse}{
+    name={converse},
+    description={The converse of a statement of the form "if $P$, then $Q$" is the statement "if $Q$, then $P$". The converse of a statement does not always have the same truth value as the original statement.}
+}
+
 % ==== SYMB GLOSSARY ====
 \newglossaryentry{symb:therefore}{
 	name=$\therefore$,
@@ -655,4 +728,10 @@
     name={$\equiv$},
     description={Denotes congruence in modular arithmetic. Specifically, $ x \equiv y \, (\text{mod } m) $ means that integers $x$ and $y$ are congruent modulo $m$, which is equivalent to stating that $m$ divides the difference $x - y$. This symbol is used to indicate that two numbers have the same remainder when divided by $m$.},
     type=symbolslist
+}
+
+\newglossaryentry{symb:function}{
+    type=symbolslist,
+    name={$\to$},
+    description={Denotes a function from one set to another. Specifically, $F \text{: } A \to B$ indicates that $F$ is a function from the set $A$ to the set $B$, meaning that every element in $A$ is mapped to exactly one element in $B$.}
 }

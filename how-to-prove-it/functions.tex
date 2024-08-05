@@ -73,6 +73,36 @@ The inverse of a function from $A$ to $B$ is not always a function from $B$ to $
     $(f^{-1} \circ f)(a) = f^{-1}(f(a)) = f^{-1}(b) = a = i_{A}(a)$.
 $(f \circ f^{-1})(b) = f(f^{-1}(b)) = f(a) = b = i_{B}(b)$.
 \end{center}
+Suppose $f \text{: } A \to B$
+\begin{enumerate}
+    \item If there is a function $g \text{: } B \to A$ such that $g \circ f = i_{A}$ then $f$ is one-to-one.
+    \item If there is a function $g \text{: } B \to A$ such that $f \circ g = i_{B}$ then $f$ is onto.
+\end{enumerate}
+Suppose $f \text{: } A \to B$. Then the following statements are equivalent:
+\begin{enumerate}
+    \item $f$ is one-to-one and onto.
+    \item $f^{-1} \text{: } B \to A$.
+    \item There is a function $g \text{: } B \to A$ such that $g \circ f = i_{A}$ and $f \circ g = i_{B}$.
+\end{enumerate}
+Interesting: The function $g(x) = \log x$ (assuming base 10) is the inverse of the function $f(x) = 10^{x}$.
+
+\section{Closures}
+Often in mathematics we work with a function from a set to itself. In that situation, the following concept can be useful:
+\begin{center}
+Suppose $f \text{: } A \to A$ and $C \subseteq A$. We will say that $C$ is \gls{closed} under $f$ if $\forall x \in C(f(x) \in C)$.
+\end{center}
+Suppose $f \text{: } A \to A$ and $B \subseteq A$. Then the \gls{closure} of $B$ under $f$ is the smallest set $C \subseteq A$ such that $B \subseteq C$ and $C$ is closed under $f$, if there is such a smallest set. In other words, a set $C \subseteq A$ is the closure of $B$ under $f$ if it has the following properties:
+\begin{enumerate}
+    \item $B \subseteq C$.
+    \item $C$ is closed under $f$.
+    \item For every set $D \subseteq A$, if $B \subseteq D$ and $D$ is closed under $f$ then $C \subseteq D$.
+\end{enumerate}
+If a set has a smallest element, then it can have only one smallest element. Similarly, if a set $A$ has a closure under a function $f$, then this closure must be unique, so it makes sense to call it \textit{the} closure rather than \textit{a} closure.\\
+
+\noindent Suppose $f \text{: } A \times A \to A$ and $C \subseteq A$. We will say that $C$ is closed under $f$ if $\forall x \in C \forall y \in C(f(x,y) \in C)$.\\
+
+\noindent A function from $A \times A$ to $A$ could be thought of as an operation that can be applied to a pair of objects $(x, y) \in A \times A$ to produce another element of $A$. Often in mathematics an operation to be performed on a pair of mathematical objects $(x, y)$ is represented by a symbol that we write between $x$ and $y$. For example, if $x$ and $y$ are real numbers then $x + y$ denotes another number, and if $x$ and $y$ are sets then $x \cup y$ is another set. Imitating this notation, when mathematicians define a function from $A \times A$ to $A$ they sometimes represent it with a symbol rather than a letter, and they write the result of applying the function to a pair $(x, y)$ by putting the symbol between $x$ and $y$, rather than by putting a letter before $(x, y)$. When a function from $A \times A$ to $A$ is written in this way, it is usually called a \gls{binary operation} on $A$.
+
 \clearpage
 \printglossary[type=\acronymtype,style=long]  % list of acronyms
 \printglossary[type=symbolslist,style=long]   % list of symbols

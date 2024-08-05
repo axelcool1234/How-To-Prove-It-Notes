@@ -548,6 +548,29 @@
     description={The converse of a statement of the form "if $P$, then $Q$" is the statement "if $Q$, then $P$". The converse of a statement does not always have the same truth value as the original statement.}
 }
 
+\newglossaryentry{closed}{
+    name={closed},
+    description={A subset $C \subseteq A$ is said to be closed under a function $f: A \to A$ if for every element $x \in C$, the image $f(x)$ is also in $C$. Formally, $C$ is closed under $f$ if $\forall x \in C(f(x) \in C)$.} 
+}
+
+\newglossaryentry{closure}{
+    name={closure},
+    description={Given a function $f: A \to A$ and a subset $B \subseteq A$, the closure of $B$ under $f$ is the smallest set $C \subseteq A$ such that $B \subseteq C$ and $C$ is closed under $f$. Formally, a set $C \subseteq A$ is the closure of $B$ under $f$ if:
+    \begin{enumerate}
+        \item $B \subseteq C$,
+        \item $C$ is closed under $f$,
+        \item For every set $D \subseteq A$, if $B \subseteq D$ and $D$ is closed under $f$, then $C \subseteq D$.
+    \end{enumerate}
+    In other words, the closure of $B$ under $f$ must be the smallest element of the family $\mathcal{F} = \{C \subseteq A \mid B \subseteq C \text{ and } C \text{ is closed under } f \}$.\\
+    Note, closures always exist.
+}
+}
+
+\newglossaryentry{binary operation}{
+    name={binary operation},
+    description={A function from $A \times A$ to $A$, often represented by a symbol written between the two elements it operates on, such as $+$ for addition or $\cup$ for union. Formally, a binary operation on a set $A$ is a function $f: A \times A \to A$ that takes a pair of elements $(x, y) \in A \times A$ and produces another element of $A$.}
+}
+
 % ==== SYMB GLOSSARY ====
 \newglossaryentry{symb:therefore}{
 	name=$\therefore$,

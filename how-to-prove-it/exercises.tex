@@ -1,0 +1,38 @@
+\documentclass{article}
+\input{preamble}
+
+\title{Exercises}
+\author{Axel Sorenson}
+\date{August 5th, 2024}
+
+\begin{document}
+\maketitle
+\section{Setential Logic}
+\section{Quantificational Logic}
+\section{Proofs}
+\subsection{Proof Strategies}
+\subsection{Proof Involving Negations and Conditionals}
+\begin{enumerate}
+\item 
+    \begin{enumerate}
+    \item Suppose $P \rightarrow Q$ and $Q \rightarrow R$ are both true. Prove that $P \rightarrow R$ is true.\\
+
+        \noindent Suppose $P \rightarrow Q$ and $Q \rightarrow R$. Suppose $P$. Given that $P$ is true, then $Q$ must be true. Given that $Q$ is true, then $R$ must be true. Thus, if $P$ is true, then $R$ is true.
+
+    \item Suppose $\lnot R \rightarrow (P \rightarrow \lnot Q)$ is true. Prove that $P \rightarrow (Q \rightarrow R)$ is true.\\
+
+        \noindent Suppose $\lnot R \rightarrow (P \rightarrow \lnot Q)$. Suppose $\lnot R$. That means $P \rightarrow \lnot Q$ is true. Suppose $P$ is true. That means $\lnot Q$ is true. Given that $\lnot R$ leads to $\lnot Q$ being true $(\lnot R \rightarrow \lnot Q)$ if $P$ is true, then the contrapositive is true: $Q \rightarrow R$. Since $P$ is assumed to be true, this shows that $P \rightarrow (Q \rightarrow R)$ is true.
+    \end{enumerate}
+\end{enumerate}
+\subsection{Proof Involving Quantifiers} 
+\subsection{Proof Involving Conjunctions and Biconditionals} 
+\subsection{Proof Involving Disjunctions} 
+\subsection{Existence and Uniqueness Proofs}
+\subsection{More Examples of Proofs}
+
+
+\clearpage
+\printglossary[type=\acronymtype,style=long]  % list of acronyms
+\printglossary[type=symbolslist,style=long]   % list of symbols
+\printglossary[type=main]                     % main glossary
+\end{document}

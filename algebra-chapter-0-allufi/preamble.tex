@@ -1,0 +1,56 @@
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{textcomp, gensymb}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage[
+nonumberlist, %do not show page numbers
+nopostdot,    %do not add additional periods
+acronym,      %generate acronym listing
+toc,          %show listings as entries in table of contents
+section]      %use section level for toc entries
+{glossaries}
+\usepackage[automake]{glossaries-extra}
+
+\loadglsentries{../glossary}
+\makeglossaries
+
+\newcommand{\printGls}[1]{%
+    \textbf{\Gls{#1}} - \glsentrydesc{#1}%
+}
+\newcommand{\printGlspl}[1]{%
+    \textbf{\Glspl{#1}} - \glsentrydesc{#1}%
+}
+\newcommand{\textiff}{\text{ iff }}
+
+% PROOF SCRATCHWORK COMMANDS (Used to create Tikz givens/goals diagrams).
+% Counter for automatic naming
+\newcounter{proofboxnum}
+
+\newcommand{\beginProofBoxes}[2]{
+    % Initialize counter and first two boxes
+    \setcounter{proofboxnum}{1}
+    \node[draw, rectangle, text width=5cm, align=center] (given\theproofboxnum) {\textbf{Givens:}\\#1};
+    \node[draw, rectangle, text width=5cm, align=center, right=0.5cm of given\theproofboxnum] (goal\theproofboxnum) {\textbf{Goals:}\\#2};
+        
+    % Increment the box number
+    \stepcounter{proofboxnum}
+}
+
+\newcommand{\addProofBoxes}[2]{
+    % Calculate previous box numbers
+    \pgfmathtruncatemacro{\previousgiven}{\theproofboxnum - 1}
+    \pgfmathtruncatemacro{\previousgoal}{\theproofboxnum - 1}
+    
+    % Add new boxes
+    \node[draw, rectangle, text width=5cm, align=center, below=0.5cm of given\previousgiven] (given\theproofboxnum) {\textbf{Givens:}\\#1};
+    \node[draw, rectangle, text width=5cm, align=center, right=0.5cm of given\theproofboxnum] (goal\theproofboxnum) {\textbf{Goals:}\\#2};
+    
+    % Draw arrows
+    \draw[->] (given\previousgiven) -- (given\theproofboxnum);
+    \draw[->] (goal\previousgoal) -- (goal\theproofboxnum);
+     
+    % Increment the box number
+    \stepcounter{proofboxnum}
+}

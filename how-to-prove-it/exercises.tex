@@ -11,6 +11,14 @@
 \section{Quantificational Logic}
 \section{Proofs}
 \subsection{Proof Strategies}
+\begin{enumerate}
+\setcounter{enumi}{7} 
+\item Suppose $A \setminus B \subseteq C \cap D$ and $x \in A$. Prove that if $x \notin D$ then $x \in B$.\\
+
+    \noindent Suppose $A \setminus B \subseteq C \cap D$ and $x \in A$. Suppose $x \notin D$. That means $x \notin C \cap D$. Since $A \setminus B \subseteq C \cap D$, this means $x \notin A \setminus B$. This is equivalent to $\forall x \in A \rightarrow x \in B$. Since $x \in A$, then $x \in B$. Thus, if $x \notin D$, then $x \in B$.
+
+\end{enumerate}
+
 \subsection{Proof Involving Negations and Conditionals}
 \begin{enumerate}
 \item 
@@ -23,8 +31,24 @@
 
         \noindent Suppose $\lnot R \rightarrow (P \rightarrow \lnot Q)$. Suppose $\lnot R$. That means $P \rightarrow \lnot Q$ is true. Suppose $P$ is true. That means $\lnot Q$ is true. Given that $\lnot R$ leads to $\lnot Q$ being true $(\lnot R \rightarrow \lnot Q)$ if $P$ is true, then the contrapositive is true: $Q \rightarrow R$. Since $P$ is assumed to be true, this shows that $P \rightarrow (Q \rightarrow R)$ is true.
     \end{enumerate}
+\setcounter{enumi}{4} 
+\item Prove that it cannot be the case that $x \in A \setminus B$ and $x \in B \setminus C$.\\
+
+\noindent For the sake of contradiction, suppose $x \in A \setminus B$ and $x \in B \setminus C$. This means, for $x \in A \setminus B$ to be true, that $x \in A$ and $x \notin B$. For $x \in B \setminus C$ to be true, $x \in B$ and $x \notin C$. It has just been shown that $x \in B$ and $x \notin B$, which is a contradiction. Thus, it cannot be the case that $x \in A \setminus B$ and $x \in B \setminus C$.
 \end{enumerate}
+
 \subsection{Proof Involving Quantifiers} 
+\begin{enumerate}
+\setcounter{enumi}{8}
+\item Prove that if $\mathcal{F}$ is a family of sets and $A \in F$, then $\bigcap \mathcal{F} \subseteq A$.\\
+
+\noindent Suppose $A \in \mathcal{F}$. Lets split this into cases. Suppose $\bigcap \mathcal{F} = \varnothing$. Since the empty set is a subet of every set, this means $\bigcap \mathcal{F} \subseteq A$. Now suppose $\bigcap \mathcal{F} \neq \varnothing$. This means $\exists x \in \bigcap \mathcal{F}$. Based on the definition of $\bigcap$, $\forall x \forall B((x \in \bigcap \mathcal{F} \land B \in \mathcal{F}) \rightarrow x \in B)$. Now, since $A \in \mathcal{F}$, all elements in $\bigcap \mathcal{F}$ are also in $A$. Is it possible for there to be an element in $\bigcap \mathcal{F}$ but not in $A$? For the sake of contradiction, lets assume that to be the case. But by the definition of $\bigcap$, every element in $\bigcap \mathcal{F}$ is also an element of every set in $\mathcal{F}$. So this'd be a contradiction. Therefore, $\bigcap \mathcal{F} \subseteq A$.\\
+
+\noindent Cleaned up version:\\
+Suppose $\mathcal{F}$ is a family of sets and $A \in F$. Consider two cases. If $\bigcap \mathcal{F} = \varnothing$, then by definition $\varnothing \subseteq A$. Since the empty set is a subset of every set, $\bigcap \mathcal{F} \subseteq A$ holds. If $\bigcap \mathcal{F} \neq \varnothing$, then there exists an element $x \in \bigcap \mathcal{F}$. By the definition of intersection, $\forall x \forall B((x \in \bigcap \mathcal{F} \land B \in \mathcal{F}) \rightarrow x \in B)$. Since $A \in \mathcal{F}$, it follows that $x \in A$ for all $x \in \bigcap \mathcal{F}$. Hence, every element of $\bigcap \mathcal{F}$ is also an element of $A$, so $\bigcap \mathcal{F} \subseteq A$. In both cases, we conclude that $\bigcap \mathcal{F} \subseteq A$.
+
+\end{enumerate}
+
 \subsection{Proof Involving Conjunctions and Biconditionals} 
 \subsection{Proof Involving Disjunctions} 
 \subsection{Existence and Uniqueness Proofs}

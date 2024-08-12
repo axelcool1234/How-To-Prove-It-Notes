@@ -24,6 +24,7 @@
 
         # Effective Haskell
         ghc
+        haskellPackages.haskell-language-server
       ];
       buildInputs = with pkgs; [
         cleanup

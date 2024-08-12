@@ -21,12 +21,16 @@
         texlab
         zathura
         tectonic
+
+        # Effective Haskell
+        ghc
       ];
       buildInputs = with pkgs; [
         cleanup
       ];
     shellHook = ''
       export HELIX_RUNTIME="$PWD/runtime"
+      echo ':set prompt "λ"' > effective-haskell/.ghci
     '';
     };
   };

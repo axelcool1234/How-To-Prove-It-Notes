@@ -30,7 +30,7 @@
       ];
     shellHook = ''
       export HELIX_RUNTIME="$PWD/runtime"
-      echo ':set prompt "λ"' > effective-haskell/.ghci
+      echo ':set prompt "λ "' > effective-haskell/.ghci
     '';
     };
   };

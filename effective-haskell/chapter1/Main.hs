@@ -1,7 +1,8 @@
 module Main where
 
 -- Pointful function
-makeGreeting salutation person = salutation <> " " <> person
+-- makeGreeting salutation person = 
+--     salutation <> " " <> person
 
 -- Pointfree programming: Writing functions with no parameters at all
 --
@@ -25,6 +26,44 @@ makeGreeting' = (<>) . (<> " ")
 enthusiasticGreeting salutation = 
     makeGreeting (salutation <> "!")
 
-main = print "no salutation to show yet"
+-- Intermediate values
+makeGreeting salutation person = 
+    let messageWithTrailingSpace = salutation <> " "
+    in messageWithTrailingSpace <> person
 
+-- Let bindings
+extendedGreeting person =
+    let joinWithNewlines a b = a <> "\n" <> b
+        helloAndGoodbye hello goodbye =
+            let hello' = makeGreeting hello person
+                goodbye' = makeGreeting goodbye person
+            in joinWithNewlines hello' goodbye'
+    in helloAndGoodbye "Hello" "Goodbye"
+
+-- Where bindings
+-- Parameters are available to where bindings, but not
+-- variables defined in the let bindings.
+--
+-- Let bindings have access to both parameters and variables
+-- defined in where bindings.
+letWhereGreeting name place =
+    let
+        salutation = "Hello" <> name
+        meetingInfo = location "Tuesday"
+    in salutation <> " " <> meetingInfo
+    where
+        location day = "we met at " <> place <> " on a " <> day
+
+-- Version of extendedGreeting with nested where bindings
+extendedGreeting' person = 
+    helloAndGoodbye "Hello" "Goodbye"
+    where
+        helloAndGoodbye hello goodbye =
+            joinWithNewLines hello' goodbye'
+            where
+                hello' = makeGreeting hello person
+                goodbye' = makeGreeting goodbye person
+        joinWithNewLines a b = a <> "\n" <> b
+
+main = print $ makeGreeting "Hello" "George" 
 
